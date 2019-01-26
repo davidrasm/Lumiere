@@ -1,0 +1,1291 @@
+<beast version='2.0'
+namespace='beast.phylodynamics:beast.phylodynamics.epidemiology:beast.epi.loggers:beast.core:beast.evolution.tree:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood:beast.evolution.speciation:beast.core.parameter:beast.evolution.migrationmodel:beast.evolution.alignment'>
+
+<!-- XML file for testing Lumiere with sites-specific fitness effects. Used to check if we can estimate birthRate and fitness effects at each site -->
+
+<map name="Beta">beast.math.distributions.Beta</map>
+<map name="Exponential">beast.math.distributions.Exponential</map>
+<map name="InverseGamma">beast.math.distributions.InverseGamma</map>
+<map name="LogNormal">beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Gamma">beast.math.distributions.Gamma</map>
+<map name="Uniform">beast.math.distributions.Uniform</map>
+<map name="prior">beast.math.distributions.Prior</map>
+<map name="LaplaceDistribution">beast.math.distributions.LaplaceDistribution</map>
+<map name="OneOnX">beast.math.distributions.OneOnX</map>
+<map name="Normal">beast.math.distributions.Normal</map>
+
+    	<data id="alignment" name="alignment" dataType="binary" spec="beast.evolution.alignment.UnsortedAlignment">
+<sequence id="seq_2-1323_100" taxon="2-1323_100" totalcount="2" value="10"/>
+<sequence id="seq_2-620_100" taxon="2-620_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1120_100" taxon="2-1120_100" totalcount="2" value="10"/>
+<sequence id="seq_1-404_100" taxon="1-404_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1310_100" taxon="2-1310_100" totalcount="2" value="01"/>
+<sequence id="seq_3-1475_100" taxon="3-1475_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1184_100" taxon="3-1184_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1103_100" taxon="2-1103_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1449_100" taxon="2-1449_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1186_100" taxon="2-1186_100" totalcount="2" value="01"/>
+<sequence id="seq_1-757_100" taxon="1-757_100" totalcount="2" value="00"/>
+<sequence id="seq_2-666_100" taxon="2-666_100" totalcount="2" value="01"/>
+<sequence id="seq_3-579_100" taxon="3-579_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1340_100" taxon="2-1340_100" totalcount="2" value="10"/>
+<sequence id="seq_3-924_100" taxon="3-924_100" totalcount="2" value="11"/>
+<sequence id="seq_3-637_100" taxon="3-637_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1316_100" taxon="2-1316_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1204_100" taxon="2-1204_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1189_100" taxon="2-1189_100" totalcount="2" value="10"/>
+<sequence id="seq_1-1289_100" taxon="1-1289_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1069_100" taxon="2-1069_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1383_100" taxon="2-1383_100" totalcount="2" value="01"/>
+<sequence id="seq_2-911_100" taxon="2-911_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1425_100" taxon="2-1425_100" totalcount="2" value="10"/>
+<sequence id="seq_2-872_100" taxon="2-872_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1210_100" taxon="2-1210_100" totalcount="2" value="10"/>
+<sequence id="seq_1-1479_100" taxon="1-1479_100" totalcount="2" value="00"/>
+<sequence id="seq_2-899_100" taxon="2-899_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1402_100" taxon="2-1402_100" totalcount="2" value="10"/>
+<sequence id="seq_1-1277_100" taxon="1-1277_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1273_100" taxon="2-1273_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1288_100" taxon="2-1288_100" totalcount="2" value="01"/>
+<sequence id="seq_1-1153_100" taxon="1-1153_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1271_100" taxon="2-1271_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1125_100" taxon="2-1125_100" totalcount="2" value="10"/>
+<sequence id="seq_1-1095_100" taxon="1-1095_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1033_100" taxon="2-1033_100" totalcount="2" value="10"/>
+<sequence id="seq_2-753_100" taxon="2-753_100" totalcount="2" value="10"/>
+<sequence id="seq_2-837_100" taxon="2-837_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1450_100" taxon="2-1450_100" totalcount="2" value="01"/>
+<sequence id="seq_3-1448_100" taxon="3-1448_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1163_100" taxon="2-1163_100" totalcount="2" value="01"/>
+<sequence id="seq_3-1005_100" taxon="3-1005_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1136_100" taxon="3-1136_100" totalcount="2" value="11"/>
+<sequence id="seq_3-801_100" taxon="3-801_100" totalcount="2" value="11"/>
+<sequence id="seq_2-540_100" taxon="2-540_100" totalcount="2" value="10"/>
+<sequence id="seq_2-651_100" taxon="2-651_100" totalcount="2" value="01"/>
+<sequence id="seq_2-828_100" taxon="2-828_100" totalcount="2" value="01"/>
+<sequence id="seq_3-1190_100" taxon="3-1190_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1228_100" taxon="2-1228_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1243_100" taxon="2-1243_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1253_100" taxon="2-1253_100" totalcount="2" value="01"/>
+<sequence id="seq_3-1380_100" taxon="3-1380_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1222_100" taxon="3-1222_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1274_100" taxon="3-1274_100" totalcount="2" value="11"/>
+<sequence id="seq_3-870_100" taxon="3-870_100" totalcount="2" value="11"/>
+<sequence id="seq_3-854_100" taxon="3-854_100" totalcount="2" value="11"/>
+<sequence id="seq_2-685_100" taxon="2-685_100" totalcount="2" value="01"/>
+<sequence id="seq_3-656_100" taxon="3-656_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1104_100" taxon="3-1104_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1167_100" taxon="2-1167_100" totalcount="2" value="01"/>
+<sequence id="seq_2-492_100" taxon="2-492_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1175_100" taxon="2-1175_100" totalcount="2" value="01"/>
+<sequence id="seq_1-1235_100" taxon="1-1235_100" totalcount="2" value="00"/>
+<sequence id="seq_3-1305_100" taxon="3-1305_100" totalcount="2" value="11"/>
+<sequence id="seq_3-287_100" taxon="3-287_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1251_100" taxon="2-1251_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1035_100" taxon="2-1035_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1138_100" taxon="2-1138_100" totalcount="2" value="10"/>
+<sequence id="seq_3-1342_100" taxon="3-1342_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1411_100" taxon="2-1411_100" totalcount="2" value="10"/>
+<sequence id="seq_3-1445_100" taxon="3-1445_100" totalcount="2" value="11"/>
+<sequence id="seq_2-754_100" taxon="2-754_100" totalcount="2" value="01"/>
+<sequence id="seq_2-963_100" taxon="2-963_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1304_100" taxon="2-1304_100" totalcount="2" value="01"/>
+<sequence id="seq_1-1395_100" taxon="1-1395_100" totalcount="2" value="00"/>
+<sequence id="seq_3-109_100" taxon="3-109_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1285_100" taxon="3-1285_100" totalcount="2" value="11"/>
+<sequence id="seq_1-984_100" taxon="1-984_100" totalcount="2" value="00"/>
+<sequence id="seq_2-883_100" taxon="2-883_100" totalcount="2" value="10"/>
+<sequence id="seq_3-811_100" taxon="3-811_100" totalcount="2" value="11"/>
+<sequence id="seq_1-1423_100" taxon="1-1423_100" totalcount="2" value="00"/>
+<sequence id="seq_3-1337_100" taxon="3-1337_100" totalcount="2" value="11"/>
+<sequence id="seq_2-638_100" taxon="2-638_100" totalcount="2" value="10"/>
+<sequence id="seq_2-917_100" taxon="2-917_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1329_100" taxon="2-1329_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1420_100" taxon="2-1420_100" totalcount="2" value="01"/>
+<sequence id="seq_1-971_100" taxon="1-971_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1220_100" taxon="2-1220_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1261_100" taxon="2-1261_100" totalcount="2" value="10"/>
+<sequence id="seq_1-374_100" taxon="1-374_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1115_100" taxon="2-1115_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1137_100" taxon="2-1137_100" totalcount="2" value="01"/>
+<sequence id="seq_3-835_100" taxon="3-835_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1437_100" taxon="3-1437_100" totalcount="2" value="11"/>
+<sequence id="seq_2-752_100" taxon="2-752_100" totalcount="2" value="10"/>
+<sequence id="seq_1-841_100" taxon="1-841_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1123_100" taxon="2-1123_100" totalcount="2" value="10"/>
+<sequence id="seq_3-416_100" taxon="3-416_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1286_100" taxon="3-1286_100" totalcount="2" value="11"/>
+<sequence id="seq_3-995_100" taxon="3-995_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1333_100" taxon="3-1333_100" totalcount="2" value="11"/>
+<sequence id="seq_2-624_100" taxon="2-624_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1474_100" taxon="2-1474_100" totalcount="2" value="01"/>
+<sequence id="seq_2-591_100" taxon="2-591_100" totalcount="2" value="10"/>
+<sequence id="seq_2-929_100" taxon="2-929_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1424_100" taxon="2-1424_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1199_100" taxon="2-1199_100" totalcount="2" value="01"/>
+<sequence id="seq_1-1398_100" taxon="1-1398_100" totalcount="2" value="00"/>
+<sequence id="seq_1-949_100" taxon="1-949_100" totalcount="2" value="00"/>
+<sequence id="seq_2-946_100" taxon="2-946_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1446_100" taxon="2-1446_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1290_100" taxon="2-1290_100" totalcount="2" value="01"/>
+<sequence id="seq_3-1464_100" taxon="3-1464_100" totalcount="2" value="11"/>
+<sequence id="seq_1-1241_100" taxon="1-1241_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1313_100" taxon="2-1313_100" totalcount="2" value="01"/>
+<sequence id="seq_3-1275_100" taxon="3-1275_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1343_100" taxon="3-1343_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1147_100" taxon="2-1147_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1089_100" taxon="2-1089_100" totalcount="2" value="01"/>
+<sequence id="seq_1-510_100" taxon="1-510_100" totalcount="2" value="00"/>
+<sequence id="seq_3-1427_100" taxon="3-1427_100" totalcount="2" value="11"/>
+<sequence id="seq_1-994_100" taxon="1-994_100" totalcount="2" value="00"/>
+<sequence id="seq_3-1403_100" taxon="3-1403_100" totalcount="2" value="11"/>
+<sequence id="seq_2-876_100" taxon="2-876_100" totalcount="2" value="10"/>
+<sequence id="seq_3-470_100" taxon="3-470_100" totalcount="2" value="11"/>
+<sequence id="seq_1-1262_100" taxon="1-1262_100" totalcount="2" value="00"/>
+<sequence id="seq_2-991_100" taxon="2-991_100" totalcount="2" value="01"/>
+<sequence id="seq_1-1229_100" taxon="1-1229_100" totalcount="2" value="00"/>
+<sequence id="seq_3-1341_100" taxon="3-1341_100" totalcount="2" value="11"/>
+<sequence id="seq_2-856_100" taxon="2-856_100" totalcount="2" value="01"/>
+<sequence id="seq_1-891_100" taxon="1-891_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1397_100" taxon="2-1397_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1244_100" taxon="2-1244_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1412_100" taxon="2-1412_100" totalcount="2" value="01"/>
+<sequence id="seq_3-1346_100" taxon="3-1346_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1300_100" taxon="2-1300_100" totalcount="2" value="01"/>
+<sequence id="seq_3-1378_100" taxon="3-1378_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1269_100" taxon="2-1269_100" totalcount="2" value="10"/>
+<sequence id="seq_3-936_100" taxon="3-936_100" totalcount="2" value="11"/>
+<sequence id="seq_3-714_100" taxon="3-714_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1171_100" taxon="3-1171_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1139_100" taxon="2-1139_100" totalcount="2" value="10"/>
+<sequence id="seq_1-992_100" taxon="1-992_100" totalcount="2" value="00"/>
+<sequence id="seq_1-1048_100" taxon="1-1048_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1263_100" taxon="2-1263_100" totalcount="2" value="01"/>
+<sequence id="seq_1-1416_100" taxon="1-1416_100" totalcount="2" value="00"/>
+<sequence id="seq_2-557_100" taxon="2-557_100" totalcount="2" value="01"/>
+<sequence id="seq_1-722_100" taxon="1-722_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1404_100" taxon="2-1404_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1414_100" taxon="2-1414_100" totalcount="2" value="10"/>
+<sequence id="seq_3-1141_100" taxon="3-1141_100" totalcount="2" value="11"/>
+<sequence id="seq_2-931_100" taxon="2-931_100" totalcount="2" value="10"/>
+<sequence id="seq_3-967_100" taxon="3-967_100" totalcount="2" value="11"/>
+<sequence id="seq_1-1364_100" taxon="1-1364_100" totalcount="2" value="00"/>
+<sequence id="seq_3-1432_100" taxon="3-1432_100" totalcount="2" value="11"/>
+<sequence id="seq_2-664_100" taxon="2-664_100" totalcount="2" value="01"/>
+<sequence id="seq_1-676_100" taxon="1-676_100" totalcount="2" value="00"/>
+<sequence id="seq_3-1225_100" taxon="3-1225_100" totalcount="2" value="11"/>
+<sequence id="seq_1-1306_100" taxon="1-1306_100" totalcount="2" value="00"/>
+<sequence id="seq_3-974_100" taxon="3-974_100" totalcount="2" value="11"/>
+<sequence id="seq_2-804_100" taxon="2-804_100" totalcount="2" value="01"/>
+<sequence id="seq_1-322_100" taxon="1-322_100" totalcount="2" value="00"/>
+<sequence id="seq_3-1365_100" taxon="3-1365_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1176_100" taxon="2-1176_100" totalcount="2" value="01"/>
+<sequence id="seq_3-881_100" taxon="3-881_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1467_100" taxon="2-1467_100" totalcount="2" value="10"/>
+<sequence id="seq_3-792_100" taxon="3-792_100" totalcount="2" value="11"/>
+<sequence id="seq_2-743_100" taxon="2-743_100" totalcount="2" value="10"/>
+<sequence id="seq_2-1101_100" taxon="2-1101_100" totalcount="2" value="01"/>
+<sequence id="seq_3-494_100" taxon="3-494_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1308_100" taxon="2-1308_100" totalcount="2" value="10"/>
+<sequence id="seq_3-1215_100" taxon="3-1215_100" totalcount="2" value="11"/>
+<sequence id="seq_2-195_100" taxon="2-195_100" totalcount="2" value="10"/>
+<sequence id="seq_1-1218_100" taxon="1-1218_100" totalcount="2" value="00"/>
+<sequence id="seq_3-1400_100" taxon="3-1400_100" totalcount="2" value="11"/>
+<sequence id="seq_2-1113_100" taxon="2-1113_100" totalcount="2" value="01"/>
+<sequence id="seq_2-950_100" taxon="2-950_100" totalcount="2" value="01"/>
+<sequence id="seq_1-1234_100" taxon="1-1234_100" totalcount="2" value="00"/>
+<sequence id="seq_2-871_100" taxon="2-871_100" totalcount="2" value="01"/>
+<sequence id="seq_1-1088_100" taxon="1-1088_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1405_100" taxon="2-1405_100" totalcount="2" value="01"/>
+<sequence id="seq_1-1057_100" taxon="1-1057_100" totalcount="2" value="00"/>
+<sequence id="seq_3-997_100" taxon="3-997_100" totalcount="2" value="11"/>
+<sequence id="seq_1-1183_100" taxon="1-1183_100" totalcount="2" value="00"/>
+<sequence id="seq_2-913_100" taxon="2-913_100" totalcount="2" value="10"/>
+<sequence id="seq_3-1458_100" taxon="3-1458_100" totalcount="2" value="11"/>
+<sequence id="seq_3-1031_100" taxon="3-1031_100" totalcount="2" value="11"/>
+<sequence id="seq_2-824_100" taxon="2-824_100" totalcount="2" value="10"/>
+<sequence id="seq_1-1297_100" taxon="1-1297_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1379_100" taxon="2-1379_100" totalcount="2" value="10"/>
+<sequence id="seq_2-759_100" taxon="2-759_100" totalcount="2" value="01"/>
+<sequence id="seq_1-942_100" taxon="1-942_100" totalcount="2" value="00"/>
+<sequence id="seq_1-1428_100" taxon="1-1428_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1037_100" taxon="2-1037_100" totalcount="2" value="01"/>
+<sequence id="seq_3-1085_100" taxon="3-1085_100" totalcount="2" value="11"/>
+<sequence id="seq_1-1217_100" taxon="1-1217_100" totalcount="2" value="00"/>
+<sequence id="seq_2-1389_100" taxon="2-1389_100" totalcount="2" value="01"/>
+<sequence id="seq_2-1180_100" taxon="2-1180_100" totalcount="2" value="01"/>
+<sequence id="seq_2-769_100" taxon="2-769_100" totalcount="2" value="10"/>
+<sequence id="seq_2-819_99.985" taxon="2-819_99.985" totalcount="2" value="10"/>
+<sequence id="seq_3-1280_99.7999" taxon="3-1280_99.7999" totalcount="2" value="11"/>
+<sequence id="seq_2-862_99.7512" taxon="2-862_99.7512" totalcount="2" value="01"/>
+<sequence id="seq_2-690_99.7214" taxon="2-690_99.7214" totalcount="2" value="10"/>
+<sequence id="seq_2-1206_99.702" taxon="2-1206_99.702" totalcount="2" value="10"/>
+<sequence id="seq_1-1007_99.608" taxon="1-1007_99.608" totalcount="2" value="00"/>
+<sequence id="seq_2-1429_99.5981" taxon="2-1429_99.5981" totalcount="2" value="01"/>
+<sequence id="seq_2-1126_99.5973" taxon="2-1126_99.5973" totalcount="2" value="10"/>
+<sequence id="seq_3-1193_99.3993" taxon="3-1193_99.3993" totalcount="2" value="11"/>
+<sequence id="seq_3-1237_98.8334" taxon="3-1237_98.8334" totalcount="2" value="11"/>
+<sequence id="seq_2-1324_98.7919" taxon="2-1324_98.7919" totalcount="2" value="10"/>
+<sequence id="seq_1-771_98.6324" taxon="1-771_98.6324" totalcount="2" value="00"/>
+<sequence id="seq_2-1334_98.5476" taxon="2-1334_98.5476" totalcount="2" value="01"/>
+<sequence id="seq_2-788_98.4866" taxon="2-788_98.4866" totalcount="2" value="01"/>
+<sequence id="seq_2-1003_98.4789" taxon="2-1003_98.4789" totalcount="2" value="10"/>
+<sequence id="seq_2-1084_98.471" taxon="2-1084_98.471" totalcount="2" value="01"/>
+<sequence id="seq_1-734_98.4233" taxon="1-734_98.4233" totalcount="2" value="00"/>
+<sequence id="seq_2-1062_98.421" taxon="2-1062_98.421" totalcount="2" value="01"/>
+<sequence id="seq_3-1039_98.4132" taxon="3-1039_98.4132" totalcount="2" value="11"/>
+<sequence id="seq_2-1257_98.2865" taxon="2-1257_98.2865" totalcount="2" value="01"/>
+<sequence id="seq_2-1128_98.2019" taxon="2-1128_98.2019" totalcount="2" value="01"/>
+<sequence id="seq_2-1154_98.0299" taxon="2-1154_98.0299" totalcount="2" value="01"/>
+<sequence id="seq_2-1063_97.9937" taxon="2-1063_97.9937" totalcount="2" value="10"/>
+<sequence id="seq_2-914_97.9827" taxon="2-914_97.9827" totalcount="2" value="01"/>
+<sequence id="seq_2-902_97.8088" taxon="2-902_97.8088" totalcount="2" value="10"/>
+<sequence id="seq_2-1036_97.7872" taxon="2-1036_97.7872" totalcount="2" value="01"/>
+<sequence id="seq_3-867_97.5229" taxon="3-867_97.5229" totalcount="2" value="11"/>
+<sequence id="seq_2-815_97.5214" taxon="2-815_97.5214" totalcount="2" value="10"/>
+<sequence id="seq_1-658_97.1411" taxon="1-658_97.1411" totalcount="2" value="00"/>
+<sequence id="seq_1-990_97.0924" taxon="1-990_97.0924" totalcount="2" value="00"/>
+<sequence id="seq_2-1195_96.4299" taxon="2-1195_96.4299" totalcount="2" value="01"/>
+<sequence id="seq_2-894_96.3465" taxon="2-894_96.3465" totalcount="2" value="10"/>
+<sequence id="seq_1-1134_95.905" taxon="1-1134_95.905" totalcount="2" value="00"/>
+<sequence id="seq_2-615_95.8144" taxon="2-615_95.8144" totalcount="2" value="01"/>
+<sequence id="seq_2-1054_95.7842" taxon="2-1054_95.7842" totalcount="2" value="01"/>
+<sequence id="seq_2-884_95.596" taxon="2-884_95.596" totalcount="2" value="10"/>
+<sequence id="seq_2-976_95.5889" taxon="2-976_95.5889" totalcount="2" value="01"/>
+<sequence id="seq_3-562_95.584" taxon="3-562_95.584" totalcount="2" value="11"/>
+<sequence id="seq_1-938_95.4508" taxon="1-938_95.4508" totalcount="2" value="00"/>
+<sequence id="seq_2-910_95.299" taxon="2-910_95.299" totalcount="2" value="01"/>
+<sequence id="seq_1-838_95.1487" taxon="1-838_95.1487" totalcount="2" value="00"/>
+<sequence id="seq_2-1071_95.0628" taxon="2-1071_95.0628" totalcount="2" value="10"/>
+<sequence id="seq_1-1114_95.0578" taxon="1-1114_95.0578" totalcount="2" value="00"/>
+<sequence id="seq_1-969_94.9493" taxon="1-969_94.9493" totalcount="2" value="00"/>
+<sequence id="seq_3-775_94.9107" taxon="3-775_94.9107" totalcount="2" value="11"/>
+<sequence id="seq_3-37_94.6815" taxon="3-37_94.6815" totalcount="2" value="11"/>
+<sequence id="seq_2-408_94.405" taxon="2-408_94.405" totalcount="2" value="10"/>
+<sequence id="seq_2-996_94.2324" taxon="2-996_94.2324" totalcount="2" value="01"/>
+<sequence id="seq_2-1049_93.9301" taxon="2-1049_93.9301" totalcount="2" value="01"/>
+<sequence id="seq_3-649_93.8599" taxon="3-649_93.8599" totalcount="2" value="11"/>
+<sequence id="seq_3-360_93.834" taxon="3-360_93.834" totalcount="2" value="11"/>
+<sequence id="seq_2-348_93.7227" taxon="2-348_93.7227" totalcount="2" value="10"/>
+<sequence id="seq_3-68_93.285" taxon="3-68_93.285" totalcount="2" value="11"/>
+<sequence id="seq_2-648_93.0411" taxon="2-648_93.0411" totalcount="2" value="10"/>
+<sequence id="seq_1-966_93.0273" taxon="1-966_93.0273" totalcount="2" value="00"/>
+<sequence id="seq_2-972_93.001" taxon="2-972_93.001" totalcount="2" value="01"/>
+<sequence id="seq_2-847_92.9024" taxon="2-847_92.9024" totalcount="2" value="10"/>
+<sequence id="seq_2-886_92.6336" taxon="2-886_92.6336" totalcount="2" value="10"/>
+<sequence id="seq_3-932_92.4969" taxon="3-932_92.4969" totalcount="2" value="11"/>
+<sequence id="seq_2-357_92.4934" taxon="2-357_92.4934" totalcount="2" value="01"/>
+<sequence id="seq_2-739_92.2647" taxon="2-739_92.2647" totalcount="2" value="01"/>
+<sequence id="seq_1-686_92.1766" taxon="1-686_92.1766" totalcount="2" value="00"/>
+<sequence id="seq_2-438_92.1598" taxon="2-438_92.1598" totalcount="2" value="10"/>
+<sequence id="seq_2-259_92.1063" taxon="2-259_92.1063" totalcount="2" value="10"/>
+<sequence id="seq_2-325_92.0694" taxon="2-325_92.0694" totalcount="2" value="10"/>
+<sequence id="seq_2-878_91.9373" taxon="2-878_91.9373" totalcount="2" value="10"/>
+<sequence id="seq_2-827_91.818" taxon="2-827_91.818" totalcount="2" value="10"/>
+<sequence id="seq_3-687_91.7423" taxon="3-687_91.7423" totalcount="2" value="11"/>
+<sequence id="seq_1-639_91.6684" taxon="1-639_91.6684" totalcount="2" value="00"/>
+<sequence id="seq_1-737_91.5953" taxon="1-737_91.5953" totalcount="2" value="00"/>
+<sequence id="seq_2-763_91.5305" taxon="2-763_91.5305" totalcount="2" value="10"/>
+<sequence id="seq_2-388_91.471" taxon="2-388_91.471" totalcount="2" value="01"/>
+<sequence id="seq_2-877_91.2968" taxon="2-877_91.2968" totalcount="2" value="10"/>
+<sequence id="seq_2-286_91.2545" taxon="2-286_91.2545" totalcount="2" value="01"/>
+<sequence id="seq_1-904_91.2499" taxon="1-904_91.2499" totalcount="2" value="00"/>
+<sequence id="seq_2-729_91.1124" taxon="2-729_91.1124" totalcount="2" value="10"/>
+<sequence id="seq_3-718_90.9527" taxon="3-718_90.9527" totalcount="2" value="11"/>
+<sequence id="seq_1-434_90.7414" taxon="1-434_90.7414" totalcount="2" value="00"/>
+<sequence id="seq_1-694_90.7303" taxon="1-694_90.7303" totalcount="2" value="00"/>
+<sequence id="seq_2-599_90.2342" taxon="2-599_90.2342" totalcount="2" value="10"/>
+<sequence id="seq_1-823_90.1719" taxon="1-823_90.1719" totalcount="2" value="00"/>
+<sequence id="seq_2-670_89.8149" taxon="2-670_89.8149" totalcount="2" value="10"/>
+<sequence id="seq_3-731_89.8024" taxon="3-731_89.8024" totalcount="2" value="11"/>
+<sequence id="seq_1-451_89.7013" taxon="1-451_89.7013" totalcount="2" value="00"/>
+<sequence id="seq_2-724_89.6158" taxon="2-724_89.6158" totalcount="2" value="01"/>
+<sequence id="seq_2-479_89.3679" taxon="2-479_89.3679" totalcount="2" value="01"/>
+<sequence id="seq_2-704_89.279" taxon="2-704_89.279" totalcount="2" value="10"/>
+<sequence id="seq_3-764_89.2605" taxon="3-764_89.2605" totalcount="2" value="11"/>
+<sequence id="seq_2-725_89.0465" taxon="2-725_89.0465" totalcount="2" value="01"/>
+<sequence id="seq_3-700_88.9939" taxon="3-700_88.9939" totalcount="2" value="11"/>
+<sequence id="seq_1-652_88.9783" taxon="1-652_88.9783" totalcount="2" value="00"/>
+<sequence id="seq_2-720_88.906" taxon="2-720_88.906" totalcount="2" value="01"/>
+<sequence id="seq_2-621_88.9037" taxon="2-621_88.9037" totalcount="2" value="10"/>
+<sequence id="seq_3-671_88.7952" taxon="3-671_88.7952" totalcount="2" value="11"/>
+<sequence id="seq_2-574_88.6431" taxon="2-574_88.6431" totalcount="2" value="01"/>
+<sequence id="seq_2-738_88.4878" taxon="2-738_88.4878" totalcount="2" value="01"/>
+<sequence id="seq_2-607_88.0416" taxon="2-607_88.0416" totalcount="2" value="01"/>
+<sequence id="seq_2-232_87.739" taxon="2-232_87.739" totalcount="2" value="10"/>
+<sequence id="seq_1-300_87.7101" taxon="1-300_87.7101" totalcount="2" value="00"/>
+<sequence id="seq_2-317_87.7046" taxon="2-317_87.7046" totalcount="2" value="10"/>
+<sequence id="seq_3-146_87.7025" taxon="3-146_87.7025" totalcount="2" value="11"/>
+<sequence id="seq_1-447_87.2813" taxon="1-447_87.2813" totalcount="2" value="00"/>
+<sequence id="seq_1-422_87.0473" taxon="1-422_87.0473" totalcount="2" value="00"/>
+<sequence id="seq_1-277_86.9964" taxon="1-277_86.9964" totalcount="2" value="00"/>
+<sequence id="seq_3-706_86.9361" taxon="3-706_86.9361" totalcount="2" value="11"/>
+<sequence id="seq_2-432_86.7477" taxon="2-432_86.7477" totalcount="2" value="10"/>
+<sequence id="seq_2-554_85.7043" taxon="2-554_85.7043" totalcount="2" value="10"/>
+<sequence id="seq_1-543_85.6279" taxon="1-543_85.6279" totalcount="2" value="00"/>
+<sequence id="seq_2-609_85.6055" taxon="2-609_85.6055" totalcount="2" value="10"/>
+<sequence id="seq_2-263_85.4448" taxon="2-263_85.4448" totalcount="2" value="01"/>
+<sequence id="seq_3-291_85.4093" taxon="3-291_85.4093" totalcount="2" value="11"/>
+<sequence id="seq_1-314_85.3439" taxon="1-314_85.3439" totalcount="2" value="00"/>
+<sequence id="seq_1-441_85.106" taxon="1-441_85.106" totalcount="2" value="00"/>
+<sequence id="seq_3-363_84.7611" taxon="3-363_84.7611" totalcount="2" value="11"/>
+<sequence id="seq_1-601_84.5507" taxon="1-601_84.5507" totalcount="2" value="00"/>
+<sequence id="seq_1-505_84.042" taxon="1-505_84.042" totalcount="2" value="00"/>
+<sequence id="seq_2-442_84.0329" taxon="2-442_84.0329" totalcount="2" value="10"/>
+<sequence id="seq_2-354_83.6389" taxon="2-354_83.6389" totalcount="2" value="10"/>
+<sequence id="seq_2-328_83.2367" taxon="2-328_83.2367" totalcount="2" value="01"/>
+<sequence id="seq_3-391_82.7306" taxon="3-391_82.7306" totalcount="2" value="11"/>
+<sequence id="seq_2-465_82.6675" taxon="2-465_82.6675" totalcount="2" value="10"/>
+<sequence id="seq_3-437_82.2128" taxon="3-437_82.2128" totalcount="2" value="11"/>
+<sequence id="seq_2-469_82.1457" taxon="2-469_82.1457" totalcount="2" value="10"/>
+<sequence id="seq_2-481_81.861" taxon="2-481_81.861" totalcount="2" value="10"/>
+<sequence id="seq_3-392_81.6196" taxon="3-392_81.6196" totalcount="2" value="11"/>
+<sequence id="seq_1-261_81.4806" taxon="1-261_81.4806" totalcount="2" value="00"/>
+<sequence id="seq_1-463_80.8627" taxon="1-463_80.8627" totalcount="2" value="00"/>
+<sequence id="seq_3-156_80.6406" taxon="3-156_80.6406" totalcount="2" value="11"/>
+<sequence id="seq_1-262_80.3049" taxon="1-262_80.3049" totalcount="2" value="00"/>
+<sequence id="seq_3-440_80.1435" taxon="3-440_80.1435" totalcount="2" value="11"/>
+<sequence id="seq_2-407_79.5234" taxon="2-407_79.5234" totalcount="2" value="01"/>
+<sequence id="seq_1-321_79.239" taxon="1-321_79.239" totalcount="2" value="00"/>
+<sequence id="seq_1-358_78.985" taxon="1-358_78.985" totalcount="2" value="00"/>
+<sequence id="seq_2-349_78.9505" taxon="2-349_78.9505" totalcount="2" value="10"/>
+<sequence id="seq_2-284_78.9321" taxon="2-284_78.9321" totalcount="2" value="01"/>
+<sequence id="seq_2-367_78.7281" taxon="2-367_78.7281" totalcount="2" value="01"/>
+<sequence id="seq_2-361_78.6966" taxon="2-361_78.6966" totalcount="2" value="10"/>
+<sequence id="seq_2-312_78.3023" taxon="2-312_78.3023" totalcount="2" value="01"/>
+<sequence id="seq_2-342_77.7953" taxon="2-342_77.7953" totalcount="2" value="01"/>
+<sequence id="seq_2-384_77.6553" taxon="2-384_77.6553" totalcount="2" value="10"/>
+<sequence id="seq_2-387_77.6505" taxon="2-387_77.6505" totalcount="2" value="10"/>
+<sequence id="seq_2-346_77.5506" taxon="2-346_77.5506" totalcount="2" value="01"/>
+<sequence id="seq_2-222_77.4985" taxon="2-222_77.4985" totalcount="2" value="10"/>
+<sequence id="seq_2-111_77.0502" taxon="2-111_77.0502" totalcount="2" value="10"/>
+<sequence id="seq_2-295_77.0259" taxon="2-295_77.0259" totalcount="2" value="10"/>
+<sequence id="seq_2-336_76.1845" taxon="2-336_76.1845" totalcount="2" value="01"/>
+<sequence id="seq_2-244_74.2858" taxon="2-244_74.2858" totalcount="2" value="01"/>
+<sequence id="seq_1-273_73.8098" taxon="1-273_73.8098" totalcount="2" value="00"/>
+<sequence id="seq_2-173_73.8006" taxon="2-173_73.8006" totalcount="2" value="10"/>
+<sequence id="seq_1-279_73.3624" taxon="1-279_73.3624" totalcount="2" value="00"/>
+<sequence id="seq_1-276_71.786" taxon="1-276_71.786" totalcount="2" value="00"/>
+<sequence id="seq_3-226_70.4244" taxon="3-226_70.4244" totalcount="2" value="11"/>
+<sequence id="seq_2-85_70.1883" taxon="2-85_70.1883" totalcount="2" value="10"/>
+<sequence id="seq_3-170_70.0494" taxon="3-170_70.0494" totalcount="2" value="11"/>
+<sequence id="seq_1-212_69.7498" taxon="1-212_69.7498" totalcount="2" value="00"/>
+<sequence id="seq_1-72_69.403" taxon="1-72_69.403" totalcount="2" value="00"/>
+<sequence id="seq_3-202_69.2317" taxon="3-202_69.2317" totalcount="2" value="11"/>
+<sequence id="seq_3-209_68.7577" taxon="3-209_68.7577" totalcount="2" value="11"/>
+<sequence id="seq_2-103_68.4424" taxon="2-103_68.4424" totalcount="2" value="10"/>
+<sequence id="seq_2-134_67.8558" taxon="2-134_67.8558" totalcount="2" value="01"/>
+<sequence id="seq_2-187_67.8479" taxon="2-187_67.8479" totalcount="2" value="10"/>
+<sequence id="seq_3-84_67.1753" taxon="3-84_67.1753" totalcount="2" value="11"/>
+<sequence id="seq_3-194_66.6843" taxon="3-194_66.6843" totalcount="2" value="11"/>
+<sequence id="seq_2-150_65.5938" taxon="2-150_65.5938" totalcount="2" value="01"/>
+<sequence id="seq_2-70_65.431" taxon="2-70_65.431" totalcount="2" value="01"/>
+<sequence id="seq_1-110_64.5955" taxon="1-110_64.5955" totalcount="2" value="00"/>
+<sequence id="seq_2-76_64.4215" taxon="2-76_64.4215" totalcount="2" value="10"/>
+<sequence id="seq_2-138_64.0994" taxon="2-138_64.0994" totalcount="2" value="01"/>
+<sequence id="seq_1-116_63.4785" taxon="1-116_63.4785" totalcount="2" value="00"/>
+<sequence id="seq_2-162_63.1936" taxon="2-162_63.1936" totalcount="2" value="10"/>
+<sequence id="seq_1-141_61.4526" taxon="1-141_61.4526" totalcount="2" value="00"/>
+<sequence id="seq_1-119_61.3387" taxon="1-119_61.3387" totalcount="2" value="00"/>
+<sequence id="seq_3-63_57.4971" taxon="3-63_57.4971" totalcount="2" value="11"/>
+<sequence id="seq_2-69_57.0834" taxon="2-69_57.0834" totalcount="2" value="01"/>
+<sequence id="seq_1-104_56.5963" taxon="1-104_56.5963" totalcount="2" value="00"/>
+<sequence id="seq_2-89_56.4947" taxon="2-89_56.4947" totalcount="2" value="01"/>
+<sequence id="seq_2-92_52.3699" taxon="2-92_52.3699" totalcount="2" value="01"/>
+<sequence id="seq_1-23_50.8371" taxon="1-23_50.8371" totalcount="2" value="00"/>
+<sequence id="seq_1-28_48.49" taxon="1-28_48.49" totalcount="2" value="00"/>
+<sequence id="seq_3-45_48.465" taxon="3-45_48.465" totalcount="2" value="11"/>
+<sequence id="seq_2-30_41.3008" taxon="2-30_41.3008" totalcount="2" value="10"/>
+<sequence id="seq_1-7_40.1968" taxon="1-7_40.1968" totalcount="2" value="00"/>
+<sequence id="seq_3-17_35.1461" taxon="3-17_35.1461" totalcount="2" value="11"/>
+<sequence id="seq_1-13_30.7991" taxon="1-13_30.7991" totalcount="2" value="00"/>
+ 		</data>
+
+		<data data="@alignment" dataType="nucleotide" filter="1::3,2::3" id="alignment.CP1+2" name="taxa" spec="beast.evolution.alignment.FilteredAlignment"/>
+		<data data="@alignment" dataType="nucleotide" filter="3::3" id="alignment.CP3" name="taxa" spec="beast.evolution.alignment.FilteredAlignment"/>
+		
+	<trait id="dateTrait" spec="beast.evolution.tree.TraitSet" traitname="date-forward">
+2-1323_100=100,
+2-620_100=100,
+2-1120_100=100,
+1-404_100=100,
+2-1310_100=100,
+3-1475_100=100,
+3-1184_100=100,
+2-1103_100=100,
+2-1449_100=100,
+2-1186_100=100,
+1-757_100=100,
+2-666_100=100,
+3-579_100=100,
+2-1340_100=100,
+3-924_100=100,
+3-637_100=100,
+2-1316_100=100,
+2-1204_100=100,
+2-1189_100=100,
+1-1289_100=100,
+2-1069_100=100,
+2-1383_100=100,
+2-911_100=100,
+2-1425_100=100,
+2-872_100=100,
+2-1210_100=100,
+1-1479_100=100,
+2-899_100=100,
+2-1402_100=100,
+1-1277_100=100,
+2-1273_100=100,
+2-1288_100=100,
+1-1153_100=100,
+2-1271_100=100,
+2-1125_100=100,
+1-1095_100=100,
+2-1033_100=100,
+2-753_100=100,
+2-837_100=100,
+2-1450_100=100,
+3-1448_100=100,
+2-1163_100=100,
+3-1005_100=100,
+3-1136_100=100,
+3-801_100=100,
+2-540_100=100,
+2-651_100=100,
+2-828_100=100,
+3-1190_100=100,
+2-1228_100=100,
+2-1243_100=100,
+2-1253_100=100,
+3-1380_100=100,
+3-1222_100=100,
+3-1274_100=100,
+3-870_100=100,
+3-854_100=100,
+2-685_100=100,
+3-656_100=100,
+3-1104_100=100,
+2-1167_100=100,
+2-492_100=100,
+2-1175_100=100,
+1-1235_100=100,
+3-1305_100=100,
+3-287_100=100,
+2-1251_100=100,
+2-1035_100=100,
+2-1138_100=100,
+3-1342_100=100,
+2-1411_100=100,
+3-1445_100=100,
+2-754_100=100,
+2-963_100=100,
+2-1304_100=100,
+1-1395_100=100,
+3-109_100=100,
+3-1285_100=100,
+1-984_100=100,
+2-883_100=100,
+3-811_100=100,
+1-1423_100=100,
+3-1337_100=100,
+2-638_100=100,
+2-917_100=100,
+2-1329_100=100,
+2-1420_100=100,
+1-971_100=100,
+2-1220_100=100,
+2-1261_100=100,
+1-374_100=100,
+2-1115_100=100,
+2-1137_100=100,
+3-835_100=100,
+3-1437_100=100,
+2-752_100=100,
+1-841_100=100,
+2-1123_100=100,
+3-416_100=100,
+3-1286_100=100,
+3-995_100=100,
+3-1333_100=100,
+2-624_100=100,
+2-1474_100=100,
+2-591_100=100,
+2-929_100=100,
+2-1424_100=100,
+2-1199_100=100,
+1-1398_100=100,
+1-949_100=100,
+2-946_100=100,
+2-1446_100=100,
+2-1290_100=100,
+3-1464_100=100,
+1-1241_100=100,
+2-1313_100=100,
+3-1275_100=100,
+3-1343_100=100,
+2-1147_100=100,
+2-1089_100=100,
+1-510_100=100,
+3-1427_100=100,
+1-994_100=100,
+3-1403_100=100,
+2-876_100=100,
+3-470_100=100,
+1-1262_100=100,
+2-991_100=100,
+1-1229_100=100,
+3-1341_100=100,
+2-856_100=100,
+1-891_100=100,
+2-1397_100=100,
+2-1244_100=100,
+2-1412_100=100,
+3-1346_100=100,
+2-1300_100=100,
+3-1378_100=100,
+2-1269_100=100,
+3-936_100=100,
+3-714_100=100,
+3-1171_100=100,
+2-1139_100=100,
+1-992_100=100,
+1-1048_100=100,
+2-1263_100=100,
+1-1416_100=100,
+2-557_100=100,
+1-722_100=100,
+2-1404_100=100,
+2-1414_100=100,
+3-1141_100=100,
+2-931_100=100,
+3-967_100=100,
+1-1364_100=100,
+3-1432_100=100,
+2-664_100=100,
+1-676_100=100,
+3-1225_100=100,
+1-1306_100=100,
+3-974_100=100,
+2-804_100=100,
+1-322_100=100,
+3-1365_100=100,
+2-1176_100=100,
+3-881_100=100,
+2-1467_100=100,
+3-792_100=100,
+2-743_100=100,
+2-1101_100=100,
+3-494_100=100,
+2-1308_100=100,
+3-1215_100=100,
+2-195_100=100,
+1-1218_100=100,
+3-1400_100=100,
+2-1113_100=100,
+2-950_100=100,
+1-1234_100=100,
+2-871_100=100,
+1-1088_100=100,
+2-1405_100=100,
+1-1057_100=100,
+3-997_100=100,
+1-1183_100=100,
+2-913_100=100,
+3-1458_100=100,
+3-1031_100=100,
+2-824_100=100,
+1-1297_100=100,
+2-1379_100=100,
+2-759_100=100,
+1-942_100=100,
+1-1428_100=100,
+2-1037_100=100,
+3-1085_100=100,
+1-1217_100=100,
+2-1389_100=100,
+2-1180_100=100,
+2-769_100=100,
+2-819_99.985=99.985,
+3-1280_99.7999=99.7999,
+2-862_99.7512=99.7512,
+2-690_99.7214=99.7214,
+2-1206_99.702=99.702,
+1-1007_99.608=99.608,
+2-1429_99.5981=99.5981,
+2-1126_99.5973=99.5973,
+3-1193_99.3993=99.3993,
+3-1237_98.8334=98.8334,
+2-1324_98.7919=98.7919,
+1-771_98.6324=98.6324,
+2-1334_98.5476=98.5476,
+2-788_98.4866=98.4866,
+2-1003_98.4789=98.4789,
+2-1084_98.471=98.471,
+1-734_98.4233=98.4233,
+2-1062_98.421=98.421,
+3-1039_98.4132=98.4132,
+2-1257_98.2865=98.2865,
+2-1128_98.2019=98.2019,
+2-1154_98.0299=98.0299,
+2-1063_97.9937=97.9937,
+2-914_97.9827=97.9827,
+2-902_97.8088=97.8088,
+2-1036_97.7872=97.7872,
+3-867_97.5229=97.5229,
+2-815_97.5214=97.5214,
+1-658_97.1411=97.1411,
+1-990_97.0924=97.0924,
+2-1195_96.4299=96.4299,
+2-894_96.3465=96.3465,
+1-1134_95.905=95.905,
+2-615_95.8144=95.8144,
+2-1054_95.7842=95.7842,
+2-884_95.596=95.596,
+2-976_95.5889=95.5889,
+3-562_95.584=95.584,
+1-938_95.4508=95.4508,
+2-910_95.299=95.299,
+1-838_95.1487=95.1487,
+2-1071_95.0628=95.0628,
+1-1114_95.0578=95.0578,
+1-969_94.9493=94.9493,
+3-775_94.9107=94.9107,
+3-37_94.6815=94.6815,
+2-408_94.405=94.405,
+2-996_94.2324=94.2324,
+2-1049_93.9301=93.9301,
+3-649_93.8599=93.8599,
+3-360_93.834=93.834,
+2-348_93.7227=93.7227,
+3-68_93.285=93.285,
+2-648_93.0411=93.0411,
+1-966_93.0273=93.0273,
+2-972_93.001=93.001,
+2-847_92.9024=92.9024,
+2-886_92.6336=92.6336,
+3-932_92.4969=92.4969,
+2-357_92.4934=92.4934,
+2-739_92.2647=92.2647,
+1-686_92.1766=92.1766,
+2-438_92.1598=92.1598,
+2-259_92.1063=92.1063,
+2-325_92.0694=92.0694,
+2-878_91.9373=91.9373,
+2-827_91.818=91.818,
+3-687_91.7423=91.7423,
+1-639_91.6684=91.6684,
+1-737_91.5953=91.5953,
+2-763_91.5305=91.5305,
+2-388_91.471=91.471,
+2-877_91.2968=91.2968,
+2-286_91.2545=91.2545,
+1-904_91.2499=91.2499,
+2-729_91.1124=91.1124,
+3-718_90.9527=90.9527,
+1-434_90.7414=90.7414,
+1-694_90.7303=90.7303,
+2-599_90.2342=90.2342,
+1-823_90.1719=90.1719,
+2-670_89.8149=89.8149,
+3-731_89.8024=89.8024,
+1-451_89.7013=89.7013,
+2-724_89.6158=89.6158,
+2-479_89.3679=89.3679,
+2-704_89.279=89.279,
+3-764_89.2605=89.2605,
+2-725_89.0465=89.0465,
+3-700_88.9939=88.9939,
+1-652_88.9783=88.9783,
+2-720_88.906=88.906,
+2-621_88.9037=88.9037,
+3-671_88.7952=88.7952,
+2-574_88.6431=88.6431,
+2-738_88.4878=88.4878,
+2-607_88.0416=88.0416,
+2-232_87.739=87.739,
+1-300_87.7101=87.7101,
+2-317_87.7046=87.7046,
+3-146_87.7025=87.7025,
+1-447_87.2813=87.2813,
+1-422_87.0473=87.0473,
+1-277_86.9964=86.9964,
+3-706_86.9361=86.9361,
+2-432_86.7477=86.7477,
+2-554_85.7043=85.7043,
+1-543_85.6279=85.6279,
+2-609_85.6055=85.6055,
+2-263_85.4448=85.4448,
+3-291_85.4093=85.4093,
+1-314_85.3439=85.3439,
+1-441_85.106=85.106,
+3-363_84.7611=84.7611,
+1-601_84.5507=84.5507,
+1-505_84.042=84.042,
+2-442_84.0329=84.0329,
+2-354_83.6389=83.6389,
+2-328_83.2367=83.2367,
+3-391_82.7306=82.7306,
+2-465_82.6675=82.6675,
+3-437_82.2128=82.2128,
+2-469_82.1457=82.1457,
+2-481_81.861=81.861,
+3-392_81.6196=81.6196,
+1-261_81.4806=81.4806,
+1-463_80.8627=80.8627,
+3-156_80.6406=80.6406,
+1-262_80.3049=80.3049,
+3-440_80.1435=80.1435,
+2-407_79.5234=79.5234,
+1-321_79.239=79.239,
+1-358_78.985=78.985,
+2-349_78.9505=78.9505,
+2-284_78.9321=78.9321,
+2-367_78.7281=78.7281,
+2-361_78.6966=78.6966,
+2-312_78.3023=78.3023,
+2-342_77.7953=77.7953,
+2-384_77.6553=77.6553,
+2-387_77.6505=77.6505,
+2-346_77.5506=77.5506,
+2-222_77.4985=77.4985,
+2-111_77.0502=77.0502,
+2-295_77.0259=77.0259,
+2-336_76.1845=76.1845,
+2-244_74.2858=74.2858,
+1-273_73.8098=73.8098,
+2-173_73.8006=73.8006,
+1-279_73.3624=73.3624,
+1-276_71.786=71.786,
+3-226_70.4244=70.4244,
+2-85_70.1883=70.1883,
+3-170_70.0494=70.0494,
+1-212_69.7498=69.7498,
+1-72_69.403=69.403,
+3-202_69.2317=69.2317,
+3-209_68.7577=68.7577,
+2-103_68.4424=68.4424,
+2-134_67.8558=67.8558,
+2-187_67.8479=67.8479,
+3-84_67.1753=67.1753,
+3-194_66.6843=66.6843,
+2-150_65.5938=65.5938,
+2-70_65.431=65.431,
+1-110_64.5955=64.5955,
+2-76_64.4215=64.4215,
+2-138_64.0994=64.0994,
+1-116_63.4785=63.4785,
+2-162_63.1936=63.1936,
+1-141_61.4526=61.4526,
+1-119_61.3387=61.3387,
+3-63_57.4971=57.4971,
+2-69_57.0834=57.0834,
+1-104_56.5963=56.5963,
+2-89_56.4947=56.4947,
+2-92_52.3699=52.3699,
+1-23_50.8371=50.8371,
+1-28_48.49=48.49,
+3-45_48.465=48.465,
+2-30_41.3008=41.3008,
+1-7_40.1968=40.1968,
+3-17_35.1461=35.1461,
+1-13_30.7991=30.7991,
+	   <taxa id="TaxonSet" spec="TaxonSet">
+		   <alignment idref="alignment"/>
+	   </taxa>
+	</trait>
+
+	<trait id="typeTrait" spec="beast.evolution.tree.TraitSet" traitname="type">
+2-1323_100=2,
+2-620_100=2,
+2-1120_100=2,
+1-404_100=1,
+2-1310_100=2,
+3-1475_100=3,
+3-1184_100=3,
+2-1103_100=2,
+2-1449_100=2,
+2-1186_100=2,
+1-757_100=1,
+2-666_100=2,
+3-579_100=3,
+2-1340_100=2,
+3-924_100=3,
+3-637_100=3,
+2-1316_100=2,
+2-1204_100=2,
+2-1189_100=2,
+1-1289_100=1,
+2-1069_100=2,
+2-1383_100=2,
+2-911_100=2,
+2-1425_100=2,
+2-872_100=2,
+2-1210_100=2,
+1-1479_100=1,
+2-899_100=2,
+2-1402_100=2,
+1-1277_100=1,
+2-1273_100=2,
+2-1288_100=2,
+1-1153_100=1,
+2-1271_100=2,
+2-1125_100=2,
+1-1095_100=1,
+2-1033_100=2,
+2-753_100=2,
+2-837_100=2,
+2-1450_100=2,
+3-1448_100=3,
+2-1163_100=2,
+3-1005_100=3,
+3-1136_100=3,
+3-801_100=3,
+2-540_100=2,
+2-651_100=2,
+2-828_100=2,
+3-1190_100=3,
+2-1228_100=2,
+2-1243_100=2,
+2-1253_100=2,
+3-1380_100=3,
+3-1222_100=3,
+3-1274_100=3,
+3-870_100=3,
+3-854_100=3,
+2-685_100=2,
+3-656_100=3,
+3-1104_100=3,
+2-1167_100=2,
+2-492_100=2,
+2-1175_100=2,
+1-1235_100=1,
+3-1305_100=3,
+3-287_100=3,
+2-1251_100=2,
+2-1035_100=2,
+2-1138_100=2,
+3-1342_100=3,
+2-1411_100=2,
+3-1445_100=3,
+2-754_100=2,
+2-963_100=2,
+2-1304_100=2,
+1-1395_100=1,
+3-109_100=3,
+3-1285_100=3,
+1-984_100=1,
+2-883_100=2,
+3-811_100=3,
+1-1423_100=1,
+3-1337_100=3,
+2-638_100=2,
+2-917_100=2,
+2-1329_100=2,
+2-1420_100=2,
+1-971_100=1,
+2-1220_100=2,
+2-1261_100=2,
+1-374_100=1,
+2-1115_100=2,
+2-1137_100=2,
+3-835_100=3,
+3-1437_100=3,
+2-752_100=2,
+1-841_100=1,
+2-1123_100=2,
+3-416_100=3,
+3-1286_100=3,
+3-995_100=3,
+3-1333_100=3,
+2-624_100=2,
+2-1474_100=2,
+2-591_100=2,
+2-929_100=2,
+2-1424_100=2,
+2-1199_100=2,
+1-1398_100=1,
+1-949_100=1,
+2-946_100=2,
+2-1446_100=2,
+2-1290_100=2,
+3-1464_100=3,
+1-1241_100=1,
+2-1313_100=2,
+3-1275_100=3,
+3-1343_100=3,
+2-1147_100=2,
+2-1089_100=2,
+1-510_100=1,
+3-1427_100=3,
+1-994_100=1,
+3-1403_100=3,
+2-876_100=2,
+3-470_100=3,
+1-1262_100=1,
+2-991_100=2,
+1-1229_100=1,
+3-1341_100=3,
+2-856_100=2,
+1-891_100=1,
+2-1397_100=2,
+2-1244_100=2,
+2-1412_100=2,
+3-1346_100=3,
+2-1300_100=2,
+3-1378_100=3,
+2-1269_100=2,
+3-936_100=3,
+3-714_100=3,
+3-1171_100=3,
+2-1139_100=2,
+1-992_100=1,
+1-1048_100=1,
+2-1263_100=2,
+1-1416_100=1,
+2-557_100=2,
+1-722_100=1,
+2-1404_100=2,
+2-1414_100=2,
+3-1141_100=3,
+2-931_100=2,
+3-967_100=3,
+1-1364_100=1,
+3-1432_100=3,
+2-664_100=2,
+1-676_100=1,
+3-1225_100=3,
+1-1306_100=1,
+3-974_100=3,
+2-804_100=2,
+1-322_100=1,
+3-1365_100=3,
+2-1176_100=2,
+3-881_100=3,
+2-1467_100=2,
+3-792_100=3,
+2-743_100=2,
+2-1101_100=2,
+3-494_100=3,
+2-1308_100=2,
+3-1215_100=3,
+2-195_100=2,
+1-1218_100=1,
+3-1400_100=3,
+2-1113_100=2,
+2-950_100=2,
+1-1234_100=1,
+2-871_100=2,
+1-1088_100=1,
+2-1405_100=2,
+1-1057_100=1,
+3-997_100=3,
+1-1183_100=1,
+2-913_100=2,
+3-1458_100=3,
+3-1031_100=3,
+2-824_100=2,
+1-1297_100=1,
+2-1379_100=2,
+2-759_100=2,
+1-942_100=1,
+1-1428_100=1,
+2-1037_100=2,
+3-1085_100=3,
+1-1217_100=1,
+2-1389_100=2,
+2-1180_100=2,
+2-769_100=2,
+2-819_99.985=2,
+3-1280_99.7999=3,
+2-862_99.7512=2,
+2-690_99.7214=2,
+2-1206_99.702=2,
+1-1007_99.608=1,
+2-1429_99.5981=2,
+2-1126_99.5973=2,
+3-1193_99.3993=3,
+3-1237_98.8334=3,
+2-1324_98.7919=2,
+1-771_98.6324=1,
+2-1334_98.5476=2,
+2-788_98.4866=2,
+2-1003_98.4789=2,
+2-1084_98.471=2,
+1-734_98.4233=1,
+2-1062_98.421=2,
+3-1039_98.4132=3,
+2-1257_98.2865=2,
+2-1128_98.2019=2,
+2-1154_98.0299=2,
+2-1063_97.9937=2,
+2-914_97.9827=2,
+2-902_97.8088=2,
+2-1036_97.7872=2,
+3-867_97.5229=3,
+2-815_97.5214=2,
+1-658_97.1411=1,
+1-990_97.0924=1,
+2-1195_96.4299=2,
+2-894_96.3465=2,
+1-1134_95.905=1,
+2-615_95.8144=2,
+2-1054_95.7842=2,
+2-884_95.596=2,
+2-976_95.5889=2,
+3-562_95.584=3,
+1-938_95.4508=1,
+2-910_95.299=2,
+1-838_95.1487=1,
+2-1071_95.0628=2,
+1-1114_95.0578=1,
+1-969_94.9493=1,
+3-775_94.9107=3,
+3-37_94.6815=3,
+2-408_94.405=2,
+2-996_94.2324=2,
+2-1049_93.9301=2,
+3-649_93.8599=3,
+3-360_93.834=3,
+2-348_93.7227=2,
+3-68_93.285=3,
+2-648_93.0411=2,
+1-966_93.0273=1,
+2-972_93.001=2,
+2-847_92.9024=2,
+2-886_92.6336=2,
+3-932_92.4969=3,
+2-357_92.4934=2,
+2-739_92.2647=2,
+1-686_92.1766=1,
+2-438_92.1598=2,
+2-259_92.1063=2,
+2-325_92.0694=2,
+2-878_91.9373=2,
+2-827_91.818=2,
+3-687_91.7423=3,
+1-639_91.6684=1,
+1-737_91.5953=1,
+2-763_91.5305=2,
+2-388_91.471=2,
+2-877_91.2968=2,
+2-286_91.2545=2,
+1-904_91.2499=1,
+2-729_91.1124=2,
+3-718_90.9527=3,
+1-434_90.7414=1,
+1-694_90.7303=1,
+2-599_90.2342=2,
+1-823_90.1719=1,
+2-670_89.8149=2,
+3-731_89.8024=3,
+1-451_89.7013=1,
+2-724_89.6158=2,
+2-479_89.3679=2,
+2-704_89.279=2,
+3-764_89.2605=3,
+2-725_89.0465=2,
+3-700_88.9939=3,
+1-652_88.9783=1,
+2-720_88.906=2,
+2-621_88.9037=2,
+3-671_88.7952=3,
+2-574_88.6431=2,
+2-738_88.4878=2,
+2-607_88.0416=2,
+2-232_87.739=2,
+1-300_87.7101=1,
+2-317_87.7046=2,
+3-146_87.7025=3,
+1-447_87.2813=1,
+1-422_87.0473=1,
+1-277_86.9964=1,
+3-706_86.9361=3,
+2-432_86.7477=2,
+2-554_85.7043=2,
+1-543_85.6279=1,
+2-609_85.6055=2,
+2-263_85.4448=2,
+3-291_85.4093=3,
+1-314_85.3439=1,
+1-441_85.106=1,
+3-363_84.7611=3,
+1-601_84.5507=1,
+1-505_84.042=1,
+2-442_84.0329=2,
+2-354_83.6389=2,
+2-328_83.2367=2,
+3-391_82.7306=3,
+2-465_82.6675=2,
+3-437_82.2128=3,
+2-469_82.1457=2,
+2-481_81.861=2,
+3-392_81.6196=3,
+1-261_81.4806=1,
+1-463_80.8627=1,
+3-156_80.6406=3,
+1-262_80.3049=1,
+3-440_80.1435=3,
+2-407_79.5234=2,
+1-321_79.239=1,
+1-358_78.985=1,
+2-349_78.9505=2,
+2-284_78.9321=2,
+2-367_78.7281=2,
+2-361_78.6966=2,
+2-312_78.3023=2,
+2-342_77.7953=2,
+2-384_77.6553=2,
+2-387_77.6505=2,
+2-346_77.5506=2,
+2-222_77.4985=2,
+2-111_77.0502=2,
+2-295_77.0259=2,
+2-336_76.1845=2,
+2-244_74.2858=2,
+1-273_73.8098=1,
+2-173_73.8006=2,
+1-279_73.3624=1,
+1-276_71.786=1,
+3-226_70.4244=3,
+2-85_70.1883=2,
+3-170_70.0494=3,
+1-212_69.7498=1,
+1-72_69.403=1,
+3-202_69.2317=3,
+3-209_68.7577=3,
+2-103_68.4424=2,
+2-134_67.8558=2,
+2-187_67.8479=2,
+3-84_67.1753=3,
+3-194_66.6843=3,
+2-150_65.5938=2,
+2-70_65.431=2,
+1-110_64.5955=1,
+2-76_64.4215=2,
+2-138_64.0994=2,
+1-116_63.4785=1,
+2-162_63.1936=2,
+1-141_61.4526=1,
+1-119_61.3387=1,
+3-63_57.4971=3,
+2-69_57.0834=2,
+1-104_56.5963=1,
+2-89_56.4947=2,
+2-92_52.3699=2,
+1-23_50.8371=1,
+1-28_48.49=1,
+3-45_48.465=3,
+2-30_41.3008=2,
+1-7_40.1968=1,
+3-17_35.1461=3,
+1-13_30.7991=1,
+	   <taxa idref="TaxonSet"/>
+	</trait>
+
+        
+<run chainLength="100000" id="mcmc" spec="MCMC" storeEvery="100" numInitializationAttempts="1">
+
+    <!-- From an input tree -->
+    <init spec='beast.util.TreeParser' id="tree" IsLabelledNewick="true" adjustTipHeights="false" trait="dateTrait">
+       <input name='newick'>
+(((((3-226_70.4244:25.4266,((((1-722_100:20.1686,2-871_100:20.1686):14.6618,(2-387_77.6505:0.56772,3-649_93.8599:16.7771):11.9132):1.4983,(3-835_100:10.0785,3-109_100:10.0785):26.2502):10.2978,1-104_56.5963:3.2228):8.3756):12.2762,((((((2-664_100:14.2003,(3-1085_100:5.5392,3-1190_100:5.5392):8.6611):10.3035,2-263_85.4448:9.9486):9.3589,2-134_67.8558:1.7184):15.3408,((3-363_84.7611:8.2566,(3-700_88.9939:3.5096,3-470_100:14.5157):8.9798):23.4639,(2-465_82.6675:2.4485,(2-1206_99.702:18.0755,2-1189_100:18.3734):1.4076):27.1784):2.244):0.69877,((3-1427_100:0.60697,3-801_100:0.60697):10.0714,3-37_94.6815:5.3599):39.2238):16.2894,(((1-212_69.7498:2.6782,2-232_87.739:20.6674):3.884,2-70_65.431:2.2435):13.8326,((1-110_64.5955:9.1574,((1-119_61.3387:4.1364,((((2-1003_98.4789:5.4111,2-591_100:6.9322):16.19,(3-1380_100:18.0835,3-291_85.4093:3.4927):5.0387):4.0386,(3-671_88.7952:2.7852,3-706_86.9361:0.92615):13.1707):4.2969,(3-1184_100:17.1515,((2-1033_100:6.5311,2-638_100:6.5311):8.4986,((2-894_96.3465:5.3539,(2-1261_100:3.0053,2-883_100:3.0053):6.0021):0.10971,2-878_91.9373:1.0544):5.9126):2.1218):14.3061):11.3402):0.68896,(2-244_74.2858:4.8424,(2-336_76.1845:0.72094,2-342_77.7953:2.3318):6.0201):12.9301):1.0752):0.59603,(((((2-1244_100:4.7774,1-942_100:4.7774):3.3516,(1-1218_100:3.5552,2-1228_100:3.5552):4.5738):22.4369,((((1-1235_100:3.2711,1-990_97.0924:0.36354):15.703,((1-1241_100:3.1856,1-1007_99.608:2.7936):3.6678,1-757_100:6.8533):12.1208):5.8095,(((2-1126_99.5973:5.6449,1-1088_100:6.0476):7.1632,(2-1269_100:11.975,3-1275_100:11.975):1.2357):2.8563,((2-804_100:14.8502,(1-686_92.1766:5.7617,1-639_91.6684:5.2535):1.2651):9.9623e-05,3-1403_100:14.8503):1.2167):8.7166):2.7693,(((1-984_100:7.3065,2-1449_100:7.3065):7.9948,(3-1237_98.8334:8.3062,2-729_91.1124:0.58521):5.8286):6.7169,((3-1378_100:17.4211,(1-737_91.5953:3.8985,2-824_100:12.3032):5.118):3.6546,2-1115_100:21.0757):0.94262):5.5346):3.013):4.3649,((1-279_73.3624:1.6835,1-261_81.4806:9.8017):0.8853,(((3-936_100:11.9682,2-739_92.2647:4.2329):8.297,2-574_88.6431:8.9083):3.2218,2-1069_100:23.4871):5.7193):5.7244):6.6626,1-652_88.9783:30.5717):3.5646):5.4871):15.5465):1.0868):2.6972,(((((1-273_73.8098:2.2731,(1-276_71.786:0.1989,((((1-505_84.042:2.3815,1-422_87.0473:5.3868):3.2786,1-321_79.239:0.85713):4.0513,1-277_86.9964:12.6659):2.7238,2-910_95.299:23.6923):0.019646):0.050406):5.4868,2-173_73.8006:7.7508):2.6942,(((((2-886_92.6336:13.1149,2-1125_100:20.4813):3.0166,3-811_100:23.4979):2.4866,3-1343_100:25.9844):4.633,2-222_77.4985:8.116):1.4211,2-103_68.4424:0.48105):4.6057):17.3664,(2-69_57.0834:9.8266,((1-938_95.4508:3.6554,(1-1234_100:3.8459,1-510_100:3.8459):4.3587):11.0287,2-540_100:19.2333):33.51):1.2675):11.427,((2-1128_98.2019:3.0419,2-754_100:4.84):18.0927,3-68_93.285:16.2177):42.505):4.5378):0.74313,((((((1-463_80.8627:0.76651,(2-1324_98.7919:5.9073,2-1323_100:7.1154):12.7884):3.0652,(1-1297_100:10.7258,((3-1448_100:9.5427,(1-1306_100:2.452,1-1183_100:2.452):7.0906):0.1663,(1-1229_100:7.1402,1-374_100:7.1402):2.5688):1.0168):12.2433):0.0063132,2-1035_100:22.9753):5.4858,(1-447_87.2813:9.7907,2-407_79.5234:2.0329):5.9517):35.7822,((((((((3-1337_100:1.9649,2-620_100:1.9649):15.2327,((2-815_97.5214:10.7863,2-1120_100:13.2648):3.2459,(2-1450_100:8.1834,(1-1114_95.0578:0.08824,1-841_100:5.0305):3.153):8.3274):0.68674):5.6689,2-354_83.6389:6.5053):1.1265,(3-416_100:21.71,3-391_82.7306:4.4406):2.2829):2.816,((3-1215_100:3.5745,3-1136_100:3.5745):21.5654,2-111_77.0502:2.1901):1.6691):17.7146,(((2-187_67.8479:3.0911,((2-827_91.818:1.9937,3-1039_98.4132:8.5889):12.7663,((2-753_100:11.8482,2-648_93.0411:4.8893):2.8199,2-438_92.1598:6.8279):8.274):12.3011):0.94039,(3-202_69.2317:3.0501,(3-392_81.6196:4.1986,(3-1104_100:13.4794,3-731_89.8024:3.2818):9.0996):11.2394):2.3652):3.2057,2-76_64.4215:3.8107):5.1344):5.5191,(((2-312_78.3023:8.5922,(2-479_89.3679:8.5425,((2-1257_98.2865:1.3236,2-950_100:3.0371):4.9269,3-974_100:7.964):11.2105):11.1153):2.9606,((2-725_89.0465:1.6712,2-607_88.0416:0.66626):2.9246,(2-1199_100:14.2034,(2-720_88.906:1.6892,2-286_91.2545:4.0378):1.4202):1.3458):17.7013):14.5909,(2-554_85.7043:32.7353,(((2-911_100:10.792,2-724_89.6158:0.40782):21.2084,((2-1175_100:11.8948,2-1379_100:11.8948):17.1766,3-156_80.6406:9.712):2.929):6.4809,(3-287_100:27.6039,((3-494_100:18.6368,((((2-1424_100:0.64724,2-819_99.985:0.63227):9.6512,2-670_89.8149:0.11337):5.9855,(3-718_90.9527:3.7597,2-856_100:12.8071):3.4769):1.6848,3-437_82.2128:0.18162):0.66803):4.3906,(3-1286_100:15.4917,3-146_87.7025:3.1942):7.5357):4.5765):10.8773):8.5497):0.81049):2.2013):3.2486,((((((1-771_98.6324:9.971,1-694_90.7303:2.0689):2.0493,(2-913_100:8.6388,2-946_100:8.6388):4.7491):10.9787,2-408_94.405:18.7716):5.7133,(((3-1274_100:2.8491,3-1464_100:2.8491):20.3005,2-346_77.5506:0.70015):5.8011,((3-870_100:16.5061,2-432_86.7477:3.2538):12.0403,((2-469_82.1457:1.7467,1-434_90.7414:10.3423):1.3933,((2-763_91.5305:3.1971,(2-1340_100:8.7657,2-743_100:8.7657):2.9009):2.0797,2-621_88.9037:2.6501):7.248):7.5521):0.40428):1.1292):1.9337,1-72_69.403:1.4165):18.5772,(3-1365_100:33.3555,2-85_70.1883:3.5438):17.2351):2.7007):10.952):2.2869,1-7_40.1968:6.727):4.1885):17.5249,((((1-28_48.49:14.6096,1-23_50.8371:16.9567):0.61425,(((2-325_92.0694:17.4876,((3-562_95.584:13.701,2-1210_100:18.117):1.5124,((3-1333_100:1.9701,3-637_100:1.9701):16.9155,(2-1404_100:14.9047,(2-884_95.596:7.5234,(2-1414_100:4.3906,2-1329_100:4.3906):7.5368):2.9773):3.9808):0.74396):5.7887):8.8277,(((((2-752_100:11.915,1-1057_100:11.915):6.5075,2-492_100:18.4226):0.35399,2-481_81.861:0.63756):0.38103,(3-792_100:10.8448,((3-1141_100:4.6394,3-1305_100:4.6394):4.4554,2-1243_100:9.0948):1.75):8.3128):0.08021,((2-931_100:8.3277,2-690_99.7214:8.0491):5.101,2-195_100:13.4286):5.8092):15.0081):0.089211,1-1428_100:34.3352):32.3986):9.4449,((3-17_35.1461:4.1035,((((((2-361_78.6966:2.3087,(2-599_90.2342:7.8378,(2-847_92.9024:4.6251,2-704_89.279:1.0016):5.8809):6.0085):14.0691,(1-1395_100:15.9537,1-314_85.3439:1.2976):21.7275):8.3925,3-209_68.7577:14.8314):2.9964,((3-194_66.6843:1.3338,((3-881_100:9.1695,(3-967_100:7.6471,3-1171_100:7.6471):1.5224):7.6937,3-1005_100:16.8631):17.7863):4.2312,2-162_63.1936:2.0743):10.1894):11.0791,2-30_41.3008:1.45):8.5288,(((((2-92_52.3699:2.2865,((2-284_78.9321:14.9524,((2-349_78.9505:3.1447,2-295_77.0259:1.2201):9.1868,3-84_67.1753:0.55634):2.6393):12.8617,(((1-994_100:7.1969,(1-1364_100:5.591,(1-1217_100:3.5656,1-1277_100:3.5656):2.0253):1.6059):24.9851,((((3-764_89.2605:6.3643,1-1479_100:17.1038):2.0653,(((3-1475_100:0.14698,3-1458_100:0.14698):5.6877,3-714_100:5.8347):10.2749,((2-1383_100:1.1306,2-917_100:1.1306):7.4023,2-357_92.4934:1.0264):7.5766):3.0596):4.5884,(3-854_100:16.2118,(2-1402_100:12.5704,(3-1342_100:1.8822,3-997_100:1.8822):10.6882):3.6414):7.5457):4.8729,(((2-1304_100:2.4863,(2-1334_98.5476:0.51309,(2-1474_100:0.1175,2-828_100:0.1175):1.848):0.52079):11.1364,2-1180_100:13.6227):6.2704,2-788_98.4866:18.3797):8.7373):3.5515):4.8141,((3-687_91.7423:9.9349,((2-1411_100:0.86208,2-1139_100:0.86208):3.7968,2-1138_100:4.6588):13.5337):15.7578,(3-1445_100:31.6846,3-170_70.0494:1.734):2.2657):3.0457):11.886):1.0346):1.6416,3-63_57.4971:9.0552):1.2841,((((((2-1220_100:3.5263,2-902_97.8088:1.3351):5.3669,3-1437_100:8.8932):9.5388,(2-1071_95.0628:11.4118,2-348_93.7227:10.0717):2.083):5.8031,((((1-734_98.4233:13.9367,3-1193_99.3993:14.9128):5.3452,(1-1398_100:0.94603,1-404_100:0.94603):19.9126):1.4725,(1-676_100:17.6882,2-1101_100:17.6882):4.6429):1.6862,(2-1037_100:13.3827,(1-1153_100:4.4611,((2-1446_100:0.41825,2-1405_100:0.41825):3.6264,1-1095_100:4.0447):0.41642):8.9216):10.6346):0.21778):16.1392,(2-1147_100:4.5511,2-862_99.7512:4.3023):35.8232):1.0858,((3-924_100:19.4544,(1-1134_95.905:0.64107,1-322_100:4.736):14.7183):6.1077,3-440_80.1435:5.7056):15.8979):11.3822):7.2653,(((((((2-1054_95.7842:9.4017,(2-1308_100:9.5507,(2-1204_100:3.6909,2-1036_97.7872:1.4781):5.8598):4.0669):16.1462,((1-992_100:25.0046,2-328_83.2367:8.2413):0.14993,(1-904_91.2499:1.7798,1-1416_100:10.53):14.6246):4.6092):6.5037,1-358_78.985:15.2524):3.2039,1-141_61.4526:0.9239):0.48678,1-116_63.4785:3.4366):13.5792,(((2-1089_100:24.463,(3-775_94.9107:6.1757,2-876_100:11.265):13.1979):18.2055,((2-150_65.5938:4.7297,(2-557_100:17.4959,(2-1063_97.9937:14.298,3-656_100:16.3042):1.1917):21.6399):2.7089,(1-262_80.3049:9.495,(((1-451_89.7013:9.9463,(1-1423_100:14.8017,((2-877_91.2968:0.55273,2-976_95.5889:4.8449):1.3328,2-996_94.2324:4.8212):4.213):5.4432):2.1782,1-300_87.7101:10.1332):4.3651,(2-685_100:26.4067,(1-1289_100:18.2319,(1-601_84.5507:0.27095,3-1225_100:15.7203):2.5116):8.1748):0.38157):2.4019):12.6546):0.82371):5.1893,((2-1313_100:21.8784,(2-442_84.0329:5.4364,(2-1412_100:11.2002,(2-899_100:8.924,2-1429_99.5981:8.5222):2.2762):10.2033):0.47487):19.874,(2-367_78.7281:2.0039,2-1123_100:23.2758):18.4766):6.1053):5.6795):3.0674,(((((((1-969_94.9493:9.7057,2-609_85.6055:0.36187):0.76559,1-891_100:15.522):9.7282,((2-1263_100:20.2268,((2-929_100:8.3441,(2-1290_100:7.9621,2-1186_100:7.9621):0.38202):0.10284,3-1280_99.7999:8.2468):11.7798):4.429,((1-1048_100:6.8242,(2-1154_98.0299:2.4838,2-759_100:4.4539):2.3703):15.3719,(2-769_100:11.3865,2-1425_100:11.3865):10.8096):2.4597):0.59446):1.6724,(2-1062_98.421:19.8282,(1-543_85.6279:2.8022,2-624_100:17.1743):4.2329):5.5154):1.1938,(2-972_93.001:14.8254,1-441_85.106:6.9304):6.2921):9.4334,(((2-837_100:10.0451,3-1031_100:10.0451):12.8607,(2-1467_100:8.8024,2-1176_100:8.8024):14.1033):3.4495,3-932_92.4969:18.8522):11.1946):0.44238,(((((2-872_100:9.2944,2-1420_100:9.2944):10.755,2-914_97.9827:18.0321):8.7699,(((2-1113_100:22.5616,2-388_91.471:14.0326):0.19011,(((((2-1273_100:2.8498,2-963_100:2.8498):4.8744,1-966_93.0273:0.75155):4.7096,2-615_95.8144:8.2482):2.967,((2-1137_100:5.3676,2-1389_100:5.3676):0.34521,2-1103_100:5.7128):9.6879):7.1792,((1-838_95.1487:5.1647,1-823_90.1719:0.18793):6.7413,(2-738_88.4878:0.58267,3-1432_100:12.0948):4.6625):5.8226):0.17172):5.8219,(2-384_77.6553:4.0461,2-1271_100:26.3907):2.1828):0.24574):1.7269,3-1222_100:30.5462):1.5853,3-1346_100:32.1315):5.8607):18.6124):3.5029):7.8894,((((((2-1251_100:7.4103,3-867_97.5229:4.9331):12.5932,3-1285_100:20.0034):15.3256,((2-991_100:7.229,(2-1195_96.4299:0.20542,(2-1310_100:2.3848,2-1300_100:2.3848):1.3907):3.4535):13.1046,(((2-1163_100:10.9287,2-666_100:10.9287):3.2423,2-651_100:14.171):0.39258,2-1049_93.9301:8.4936):5.77):14.9954):13.839,(((((1-971_100:7.5849,2-1316_100:7.5849):10.1075,(2-1288_100:16.4839,1-658_97.1411:13.625):1.2085):5.6139,((2-1397_100:10.4618,(1-949_100:9.9357,2-1167_100:9.9357):0.52605):10.547,((2-1253_100:3.0778,1-1262_100:3.0778):7.0764,(3-995_100:7.1774,3-1400_100:7.1774):2.9768):10.8545):2.2976):13.4966,2-259_92.1063:28.9093):1.1607,2-138_64.0994:2.0631):11.2043):7.6494,3-45_48.465:5.2824):7.4775,2-89_56.4947:20.7896):3.702):0.68113):0.27937):2.5187,1-13_30.7991:2.2752):4.7026):2.5346,(2-317_87.7046:24.9218,(3-360_93.834:17.4624,(3-1341_100:22.52,(2-1084_98.471:14.9653,3-579_100:16.4943):6.0258):1.1083):13.5888):41.4962):9.5303);
+       </input>
+    </init>
+		
+    <state id="state" storeEvery="10000">
+        
+        <stateNode idref="tree"/>             
+        <stateNode idref="samplingProportion"/>
+        <stateNode idref="deathRate"/>
+        <stateNode idref="birthRate"/>
+        <stateNode idref="migrationMatrix"/>
+        <stateNode idref="geo-frequencies"/>
+        <stateNode idref="origin"/>
+        <stateNode idref="mutFitEffects"/>
+
+        <stateNode spec="beast.core.parameter.BooleanParameter" dimension="2" id="indicator.migrationMatrix" value="true true"/>
+        <stateNode spec="beast.core.parameter.BooleanParameter" dimension="1" id="indicator.birthRate" value="true"/>
+        <stateNode spec="beast.core.parameter.BooleanParameter" dimension="1" id="indicator.deathRate" value="true"/>
+
+    </state>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+			 <distribution spec="beast.evolution.speciation.FitnessBirthDeathModel" id="BDMM" tree='@tree' typeLabel="type"
+			 stateNumber="1" checkRho='false' dtTimeStep='0.05' alignment='@alignment' approxEProbs='true'>
+      			
+      			<parameter id="origin" name="origin" value="100."/>
+				<parameter name="frequencies" id="geo-frequencies" value="0.5 0.5" lower="0." upper="1."/>	
+
+				<parameter name="migrationMatrix" id="migrationMatrix" lower="0" dimension="2" value="0.02207 0.02207" upper="10"/>
+				
+				<parameter name="birthRate" id="birthRate" lower="0" dimension="1" value="0.11318" upper="10"/>
+
+				<parameter name="rho" id="rhoSamplingProportion" value="0.35123" lower="0" dimension="1"/>
+                <parameter name="rhoSamplingTimes" id="rhoSamplingTimes" value="0."/> <!-- Only at present (t=0) -->
+				
+				<parameter name="deathRate" id="deathRate" value="0.05" lower="0" dimension="1"/>
+				<parameter name="samplingProportion" id="samplingProportion" value="0.35123" lower="0" upper="1."/>
+				
+				<reverseTimeArrays spec="BooleanParameter" value="true true true true true true"/>
+				
+				<fitnessModel spec="beast.evolution.fitnessmodel.SiteSpecificFitnessModel" id="fitModel" mutationMatrix="@migrationMatrix">
+				    
+				    <parameter name="mutFitEffects" id="mutFitEffects" value="1.0" lower="0" upper="1.5" dimension="2"/>
+	                
+	            </fitnessModel>				  
+			 </distribution>
+			
+            
+			<distribution id="birthRatePrior" spec='beast.math.distributions.ExcludablePrior' x="@birthRate" xInclude="true">
+            	<LogNormal name="distr" M="0.1" S="1.0" meanInRealSpace="true"/> 
+			</distribution>
+
+			<distribution id="deathRatePrior" spec='beast.math.distributions.ExcludablePrior' x="@deathRate" xInclude="true">
+            	<LogNormal name="distr" M="0.05" S="0.1" meanInRealSpace="true"/>
+			</distribution>
+
+			<distribution id="migrationPrior" spec='beast.math.distributions.ExcludablePrior' x="@migrationMatrix" xInclude="true true">
+            	<LogNormal name="distr" M="0.002" S="1.0" meanInRealSpace="true"/> 
+			</distribution>
+            
+              
+        </distribution>
+    </distribution>
+
+	<operator id="mutFitEffectsScaler" parameter="@mutFitEffects" scaleFactor="0.9" spec="ScaleOperator" weight="6"/>
+	<operator id="birthRateScaler" parameter="@birthRate" indicator="@indicator.birthRate" scaleFactor="0.9" spec="ScaleOperator" weight="6"/>
+   	<operator id='birthFitUpDown' spec='UpDownOperator' scaleFactor="0.9" weight="6" optimise="true">
+         <up idref="mutFitEffects"/>
+         <down idref="birthRate"/>
+  	</operator>
+
+<logger fileName="fitBD_randParams_2sites_estBirthRates_sim1.log" id="tracelog" logEvery="100" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="prior"/>
+        <!-- <log idref="likelihood"/> -->  
+        <log idref="BDMM"/>
+        <log id="TreeHeight" spec="beast.evolution.tree.TreeHeightLogger" tree="@tree"/>
+		<log idref="origin"/>
+		<parameter idref="mutFitEffects" name="log"/>
+        <parameter idref="birthRate" name="log"/>
+        <!-- <parameter idref="migrationMatrix" name="log"/> -->
+        <parameter idref="deathRate" name="log"/> 
+    </logger>
+
+    <logger id="screenlog" logEvery="10">
+        <log idref="posterior"/>
+        <log arg="@posterior" id="ESS.0" spec="util.ESS"/>
+        <log idref="prior"/>
+        <log idref="TreeHeight"/>
+		<log idref="origin"/>
+		<log idref="mutFitEffects"/>
+        <log idref="birthRate"/>
+        <!-- <log idref="migrationMatrix"/> -->
+        <log idref="deathRate"/>
+    </logger>
+ 		 
+
+</run>
+
+</beast>

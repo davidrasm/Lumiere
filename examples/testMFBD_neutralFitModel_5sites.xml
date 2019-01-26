@@ -1,0 +1,374 @@
+<beast version='2.0'
+namespace='beast.phylodynamics:beast.phylodynamics.epidemiology:beast.epi.loggers:beast.core:beast.evolution.tree:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood:beast.evolution.speciation:beast.core.parameter:beast.evolution.migrationmodel:beast.evolution.alignment'>
+
+<!-- XML file for testing Lumiere with a neural fitness model. Used to check if we can estimate birth and death rates correctly with no mutational fitness effects -->
+
+<map name="Beta">beast.math.distributions.Beta</map>
+<map name="Exponential">beast.math.distributions.Exponential</map>
+<map name="InverseGamma">beast.math.distributions.InverseGamma</map>
+<map name="LogNormal">beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Gamma">beast.math.distributions.Gamma</map>
+<map name="Uniform">beast.math.distributions.Uniform</map>
+<map name="prior">beast.math.distributions.Prior</map>
+<map name="LaplaceDistribution">beast.math.distributions.LaplaceDistribution</map>
+<map name="OneOnX">beast.math.distributions.OneOnX</map>
+<map name="Normal">beast.math.distributions.Normal</map>
+
+    	<data id="alignment" name="alignment" dataType="binary" spec="beast.evolution.alignment.UnsortedAlignment">
+<sequence id="seq_3-651_100" taxon="3-651_100" totalcount="2" value="01100"/>
+<sequence id="seq_1-57_100" taxon="1-57_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-403_100" taxon="1-403_100" totalcount="2" value="00000"/>
+<sequence id="seq_2-371_100" taxon="2-371_100" totalcount="2" value="00100"/>
+<sequence id="seq_1-280_100" taxon="1-280_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-270_100" taxon="1-270_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-633_100" taxon="1-633_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-544_100" taxon="1-544_100" totalcount="2" value="00000"/>
+<sequence id="seq_2-746_100" taxon="2-746_100" totalcount="2" value="01000"/>
+<sequence id="seq_1-661_100" taxon="1-661_100" totalcount="2" value="00000"/>
+<sequence id="seq_2-685_100" taxon="2-685_100" totalcount="2" value="10000"/>
+<sequence id="seq_1-423_100" taxon="1-423_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-182_100" taxon="1-182_100" totalcount="2" value="00000"/>
+<sequence id="seq_2-757_100" taxon="2-757_100" totalcount="2" value="01000"/>
+<sequence id="seq_1-726_100" taxon="1-726_100" totalcount="2" value="00000"/>
+<sequence id="seq_3-700_100" taxon="3-700_100" totalcount="2" value="10001"/>
+<sequence id="seq_1-491_100" taxon="1-491_100" totalcount="2" value="00000"/>
+<sequence id="seq_2-747_100" taxon="2-747_100" totalcount="2" value="10000"/>
+<sequence id="seq_1-648_100" taxon="1-648_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-666_100" taxon="1-666_100" totalcount="2" value="00000"/>
+<sequence id="seq_2-665_100" taxon="2-665_100" totalcount="2" value="00001"/>
+<sequence id="seq_1-461_100" taxon="1-461_100" totalcount="2" value="00000"/>
+<sequence id="seq_2-526_100" taxon="2-526_100" totalcount="2" value="10000"/>
+<sequence id="seq_1-181_100" taxon="1-181_100" totalcount="2" value="00000"/>
+<sequence id="seq_3-715_100" taxon="3-715_100" totalcount="2" value="00101"/>
+<sequence id="seq_1-664_100" taxon="1-664_100" totalcount="2" value="00000"/>
+<sequence id="seq_2-531_100" taxon="2-531_100" totalcount="2" value="00001"/>
+<sequence id="seq_1-686_100" taxon="1-686_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-224_100" taxon="1-224_100" totalcount="2" value="00000"/>
+<sequence id="seq_4-482_100" taxon="4-482_100" totalcount="2" value="00111"/>
+<sequence id="seq_1-687_100" taxon="1-687_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-770_100" taxon="1-770_100" totalcount="2" value="00000"/>
+<sequence id="seq_2-689_100" taxon="2-689_100" totalcount="2" value="00001"/>
+<sequence id="seq_1-263_100" taxon="1-263_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-202_100" taxon="1-202_100" totalcount="2" value="00000"/>
+<sequence id="seq_5-405_100" taxon="5-405_100" totalcount="2" value="01111"/>
+<sequence id="seq_1-152_100" taxon="1-152_100" totalcount="2" value="00000"/>
+<sequence id="seq_3-630_100" taxon="3-630_100" totalcount="2" value="10001"/>
+<sequence id="seq_1-785_100" taxon="1-785_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-662_100" taxon="1-662_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-226_100" taxon="1-226_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-392_100" taxon="1-392_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-568_100" taxon="1-568_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-749_100" taxon="1-749_100" totalcount="2" value="00000"/>
+<sequence id="seq_1-470_100" taxon="1-470_100" totalcount="2" value="00000"/>
+<sequence id="seq_2-688_100" taxon="2-688_100" totalcount="2" value="00100"/>
+<sequence id="seq_2-534_99.4626" taxon="2-534_99.4626" totalcount="2" value="00001"/>
+<sequence id="seq_1-758_99.2571" taxon="1-758_99.2571" totalcount="2" value="00000"/>
+<sequence id="seq_1-365_97.6021" taxon="1-365_97.6021" totalcount="2" value="00000"/>
+<sequence id="seq_3-557_97.3627" taxon="3-557_97.3627" totalcount="2" value="01100"/>
+<sequence id="seq_1-322_96.2213" taxon="1-322_96.2213" totalcount="2" value="00000"/>
+<sequence id="seq_4-635_96.1964" taxon="4-635_96.1964" totalcount="2" value="00111"/>
+<sequence id="seq_1-628_96.1895" taxon="1-628_96.1895" totalcount="2" value="00000"/>
+<sequence id="seq_2-584_95.8639" taxon="2-584_95.8639" totalcount="2" value="10000"/>
+<sequence id="seq_2-562_95.7259" taxon="2-562_95.7259" totalcount="2" value="00001"/>
+<sequence id="seq_1-563_95.0658" taxon="1-563_95.0658" totalcount="2" value="00000"/>
+<sequence id="seq_5-445_93.9865" taxon="5-445_93.9865" totalcount="2" value="10111"/>
+<sequence id="seq_4-472_92.9598" taxon="4-472_92.9598" totalcount="2" value="00111"/>
+<sequence id="seq_2-437_92.4574" taxon="2-437_92.4574" totalcount="2" value="00100"/>
+<sequence id="seq_3-414_92.2807" taxon="3-414_92.2807" totalcount="2" value="10001"/>
+<sequence id="seq_1-175_92.2425" taxon="1-175_92.2425" totalcount="2" value="00000"/>
+<sequence id="seq_1-508_92.0316" taxon="1-508_92.0316" totalcount="2" value="00000"/>
+<sequence id="seq_1-477_91.7242" taxon="1-477_91.7242" totalcount="2" value="00000"/>
+<sequence id="seq_2-351_90.0387" taxon="2-351_90.0387" totalcount="2" value="00001"/>
+<sequence id="seq_1-314_88.6789" taxon="1-314_88.6789" totalcount="2" value="00000"/>
+<sequence id="seq_1-391_88.5443" taxon="1-391_88.5443" totalcount="2" value="00000"/>
+<sequence id="seq_1-210_87.7482" taxon="1-210_87.7482" totalcount="2" value="00000"/>
+<sequence id="seq_1-83_85.8809" taxon="1-83_85.8809" totalcount="2" value="00000"/>
+<sequence id="seq_1-164_85.7568" taxon="1-164_85.7568" totalcount="2" value="00000"/>
+<sequence id="seq_1-153_81.99" taxon="1-153_81.99" totalcount="2" value="00000"/>
+<sequence id="seq_1-46_78.0688" taxon="1-46_78.0688" totalcount="2" value="00000"/>
+<sequence id="seq_1-157_77.4483" taxon="1-157_77.4483" totalcount="2" value="00000"/>
+<sequence id="seq_4-165_76.6664" taxon="4-165_76.6664" totalcount="2" value="00111"/>
+<sequence id="seq_1-80_70.9539" taxon="1-80_70.9539" totalcount="2" value="00000"/>
+<sequence id="seq_1-125_70.8694" taxon="1-125_70.8694" totalcount="2" value="00000"/>
+<sequence id="seq_1-118_70.1638" taxon="1-118_70.1638" totalcount="2" value="00000"/>
+<sequence id="seq_1-105_68.002" taxon="1-105_68.002" totalcount="2" value="00000"/>
+<sequence id="seq_1-67_61.556" taxon="1-67_61.556" totalcount="2" value="00000"/>
+<sequence id="seq_3-19_55.0408" taxon="3-19_55.0408" totalcount="2" value="01010"/>
+<sequence id="seq_2-31_53.1323" taxon="2-31_53.1323" totalcount="2" value="10000"/>
+<sequence id="seq_1-20_45.1811" taxon="1-20_45.1811" totalcount="2" value="00000"/>
+ 		</data>
+
+		<data data="@alignment" dataType="nucleotide" filter="1::3,2::3" id="alignment.CP1+2" name="taxa" spec="beast.evolution.alignment.FilteredAlignment"/>
+		<data data="@alignment" dataType="nucleotide" filter="3::3" id="alignment.CP3" name="taxa" spec="beast.evolution.alignment.FilteredAlignment"/>
+		
+	<trait id="dateTrait" spec="beast.evolution.tree.TraitSet" traitname="date-forward">
+3-651_100=100,
+1-57_100=100,
+1-403_100=100,
+2-371_100=100,
+1-280_100=100,
+1-270_100=100,
+1-633_100=100,
+1-544_100=100,
+2-746_100=100,
+1-661_100=100,
+2-685_100=100,
+1-423_100=100,
+1-182_100=100,
+2-757_100=100,
+1-726_100=100,
+3-700_100=100,
+1-491_100=100,
+2-747_100=100,
+1-648_100=100,
+1-666_100=100,
+2-665_100=100,
+1-461_100=100,
+2-526_100=100,
+1-181_100=100,
+3-715_100=100,
+1-664_100=100,
+2-531_100=100,
+1-686_100=100,
+1-224_100=100,
+4-482_100=100,
+1-687_100=100,
+1-770_100=100,
+2-689_100=100,
+1-263_100=100,
+1-202_100=100,
+5-405_100=100,
+1-152_100=100,
+3-630_100=100,
+1-785_100=100,
+1-662_100=100,
+1-226_100=100,
+1-392_100=100,
+1-568_100=100,
+1-749_100=100,
+1-470_100=100,
+2-688_100=100,
+2-534_99.4626=99.4626,
+1-758_99.2571=99.2571,
+1-365_97.6021=97.6021,
+3-557_97.3627=97.3627,
+1-322_96.2213=96.2213,
+4-635_96.1964=96.1964,
+1-628_96.1895=96.1895,
+2-584_95.8639=95.8639,
+2-562_95.7259=95.7259,
+1-563_95.0658=95.0658,
+5-445_93.9865=93.9865,
+4-472_92.9598=92.9598,
+2-437_92.4574=92.4574,
+3-414_92.2807=92.2807,
+1-175_92.2425=92.2425,
+1-508_92.0316=92.0316,
+1-477_91.7242=91.7242,
+2-351_90.0387=90.0387,
+1-314_88.6789=88.6789,
+1-391_88.5443=88.5443,
+1-210_87.7482=87.7482,
+1-83_85.8809=85.8809,
+1-164_85.7568=85.7568,
+1-153_81.99=81.99,
+1-46_78.0688=78.0688,
+1-157_77.4483=77.4483,
+4-165_76.6664=76.6664,
+1-80_70.9539=70.9539,
+1-125_70.8694=70.8694,
+1-118_70.1638=70.1638,
+1-105_68.002=68.002,
+1-67_61.556=61.556,
+3-19_55.0408=55.0408,
+2-31_53.1323=53.1323,
+1-20_45.1811=45.1811,
+	   <taxa id="TaxonSet" spec="TaxonSet">
+		   <alignment idref="alignment"/>
+	   </taxa>
+	</trait>
+
+	<trait id="typeTrait" spec="beast.evolution.tree.TraitSet" traitname="type">
+3-651_100=3,
+1-57_100=1,
+1-403_100=1,
+2-371_100=2,
+1-280_100=1,
+1-270_100=1,
+1-633_100=1,
+1-544_100=1,
+2-746_100=2,
+1-661_100=1,
+2-685_100=2,
+1-423_100=1,
+1-182_100=1,
+2-757_100=2,
+1-726_100=1,
+3-700_100=3,
+1-491_100=1,
+2-747_100=2,
+1-648_100=1,
+1-666_100=1,
+2-665_100=2,
+1-461_100=1,
+2-526_100=2,
+1-181_100=1,
+3-715_100=3,
+1-664_100=1,
+2-531_100=2,
+1-686_100=1,
+1-224_100=1,
+4-482_100=4,
+1-687_100=1,
+1-770_100=1,
+2-689_100=2,
+1-263_100=1,
+1-202_100=1,
+5-405_100=5,
+1-152_100=1,
+3-630_100=3,
+1-785_100=1,
+1-662_100=1,
+1-226_100=1,
+1-392_100=1,
+1-568_100=1,
+1-749_100=1,
+1-470_100=1,
+2-688_100=2,
+2-534_99.4626=2,
+1-758_99.2571=1,
+1-365_97.6021=1,
+3-557_97.3627=3,
+1-322_96.2213=1,
+4-635_96.1964=4,
+1-628_96.1895=1,
+2-584_95.8639=2,
+2-562_95.7259=2,
+1-563_95.0658=1,
+5-445_93.9865=5,
+4-472_92.9598=4,
+2-437_92.4574=2,
+3-414_92.2807=3,
+1-175_92.2425=1,
+1-508_92.0316=1,
+1-477_91.7242=1,
+2-351_90.0387=2,
+1-314_88.6789=1,
+1-391_88.5443=1,
+1-210_87.7482=1,
+1-83_85.8809=1,
+1-164_85.7568=1,
+1-153_81.99=1,
+1-46_78.0688=1,
+1-157_77.4483=1,
+4-165_76.6664=4,
+1-80_70.9539=1,
+1-125_70.8694=1,
+1-118_70.1638=1,
+1-105_68.002=1,
+1-67_61.556=1,
+3-19_55.0408=3,
+2-31_53.1323=2,
+1-20_45.1811=1,
+	   <taxa idref="TaxonSet"/>
+	</trait>
+
+        
+<run chainLength="100000" id="mcmc" spec="MCMC" storeEvery="100" numInitializationAttempts="1">
+
+    <!-- From an input tree -->
+    <init spec='beast.util.TreeParser' id="tree" IsLabelledNewick="true" adjustTipHeights="false" trait="dateTrait">
+       <input name='newick'>
+((1-46_78.0688:22.3224,((1-544_100:6.5867,1-758_99.2571:5.8437):32.2832,(((1-403_100:10.9486,1-226_100:10.9486):9.1639,(1-568_100:5.6476,1-726_100:5.6476):14.4649):8.0664,1-749_100:28.1789):10.691):5.3838):26.7733,(((((3-414_92.2807:29.101,((1-164_85.7568:10.3036,1-770_100:24.5468):10.5585,(1-118_70.1638:0.55313,((3-700_100:26.1913,((1-491_100:8.5554,1-423_100:8.5554):13.5557,1-210_87.7482:9.8593):4.0802):3.7656,(1-686_100:2.5544,2-688_100:2.5544):27.4025):0.43243):4.716):1.715):1.111,((1-105_68.002:0.28976,(2-584_95.8639:23.2598,(1-157_77.4483:3.1146,1-83_85.8809:11.5472):1.7295):4.8919):5.1935,1-280_100:37.4812):0.45012):15.404,(2-31_53.1323:3.4343,(1-785_100:31.9106,((3-651_100:3.4812,3-557_97.3627:0.84389):22.4343,1-182_100:25.9155):5.9951):18.3915):3.0332):6.8139,(((2-757_100:31.6028,((1-263_100:17.5525,(2-685_100:14.301,2-371_100:14.301):3.2515):0.75992,1-175_92.2425:10.5549):13.2904):25.9192,(1-20_45.1811:0.055588,(((1-461_100:46.6029,(2-351_90.0387:34.9244,(3-630_100:39.3293,((2-689_100:26.8848,2-534_99.4626:26.3473):9.2863,((2-665_100:9.3502,3-715_100:9.3502):21.8312,((5-445_93.9865:18.1451,((4-635_96.1964:10.6397,5-405_100:14.4433):8.525,(4-472_92.9598:1.977,4-482_100:9.0172):13.9511):1.1903):0.13867,4-165_76.6664:0.96366):6.8841):4.9896):3.1583):5.5564):1.7172):7.0096,((2-562_95.7259:25.4196,((1-470_100:9.0671,1-662_100:9.0671):10.4893,1-152_100:19.5564):10.1374):0.38446,(1-391_88.5443:0.20705,1-648_100:11.6628):18.4154):23.5343):0.27157,((1-67_61.556:3.0661,((1-153_81.99:8.3236,(((1-661_100:3.193,1-392_100:3.193):8.448,2-531_100:11.6411):9.4556,(1-314_88.6789:3.9526,(1-563_95.0658:2.8337,1-270_100:7.7679):7.5058):5.823):5.2369):13.3061,1-57_100:39.6397):1.8705):0.081416,1-80_70.9539:12.5455):12.2925):0.99045):2.6474):1.5758,(2-437_92.4574:43.8963,(1-125_70.8694:16.0604,1-687_100:45.191):6.2479):7.6589):1.0515):6.1064,(((1-365_97.6021:20.6003,(((2-746_100:20.4086,1-322_96.2213:16.63):1.2997,(2-747_100:1.179,2-526_100:1.179):20.5293):0.015679,((1-633_100:17.4379,(1-628_96.1895:0.29348,(1-666_100:3.1002,1-224_100:3.1002):1.0037):13.3339):2.7274,1-508_92.0316:12.197):1.5587):1.2743):26.6515,((1-181_100:36.2327,(1-664_100:3.132,1-202_100:3.132):33.1007):2.0769,1-477_91.7242:30.0338):11.3401):11.5267,3-19_55.0408:16.2172):5.0792):4.7713);
+       </input>
+    </init>
+		
+    <state id="state" storeEvery="10000">
+        
+        <stateNode idref="tree"/>             
+        <stateNode idref="samplingRate"/>
+        <stateNode idref="deathRate"/>
+        <stateNode idref="birthRate"/>
+        <stateNode idref="migrationMatrix"/>
+        <stateNode idref="geo-frequencies"/>
+        <stateNode idref="origin"/>
+
+        <stateNode spec="beast.core.parameter.BooleanParameter" dimension="2" id="indicator.migrationMatrix" value="true true"/>
+        <stateNode spec="beast.core.parameter.BooleanParameter" dimension="1" id="indicator.birthRate" value="true true true true true"/>
+        <stateNode spec="beast.core.parameter.BooleanParameter" dimension="1" id="indicator.deathRate" value="true"/>
+
+    </state>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+			 <distribution spec="beast.evolution.speciation.FitnessBirthDeathModel" id="BDMM" tree='@tree' typeLabel="type"
+			 stateNumber="1" checkRho='false' dtTimeStep='0.05' alignment='@alignment'>
+      			
+      			<parameter id="origin" name="origin" value="100."/>
+				<parameter name="frequencies" id="geo-frequencies" value="0.5 0.5" lower="0." upper="1."/>	
+
+      			<parameter name="migrationMatrix" id="migrationMatrix" lower="0" dimension="2" value="0.004 0.002" upper="10"/>
+				
+				<parameter name="birthRate" id="birthRate" lower="0" dimension="1" value="0.14 0.1 0.1 0.1 0.1"  upper="10"/>
+				<parameter name="birthRateChangeTimes" value="0. 20. 40. 60. 80."/>
+
+                <parameter name="rho" id="rhoSamplingProportion" value="0.1" lower="0" dimension="1"/>
+                <parameter name="rhoSamplingTimes" id="rhoSamplingTimes" value="0."/> <!-- Only at present (t=0) -->
+				
+				<parameter name="deathRate" id="deathRate" value="0.05" lower="0" dimension="1"/>
+				<parameter name="samplingRate" id="samplingRate" value="0.1" lower="0" upper="1."/> 			 
+				
+				<reverseTimeArrays spec="BooleanParameter" value="true true true true true true"/>
+				
+				<fitnessModel spec="beast.evolution.fitnessmodel.NeutralFitnessModel" id="fitModel"/>
+	                			  
+			 </distribution>
+			
+            
+			<distribution id="birthRatePrior" spec='beast.math.distributions.ExcludablePrior' x="@birthRate" xInclude="true true true true true">
+            	<LogNormal name="distr" M="0.1" S="1.0" meanInRealSpace="true"/> 
+			</distribution>
+
+			<distribution id="deathRatePrior" spec='beast.math.distributions.ExcludablePrior' x="@deathRate" xInclude="true">
+            	<LogNormal name="distr" M="0.05" S="0.1" meanInRealSpace="true"/>
+			</distribution>
+
+			<distribution id="migrationPrior" spec='beast.math.distributions.ExcludablePrior' x="@migrationMatrix" xInclude="true true">
+            	<LogNormal name="distr" M="0.002" S="1.0" meanInRealSpace="true"/> 
+			</distribution>
+            
+              
+        </distribution>
+    </distribution>
+
+	<operator id="birthRateScaler" parameter="@birthRate" indicator="@indicator.birthRate" scaleFactor="0.9" spec="ScaleOperator" weight="4"/>
+	<!-- <operator id="deathRateScaler" parameter="@deathRate" indicator="@indicator.deathRate" scaleFactor="0.9" spec="ScaleOperator" weight="4"/>
+	<operator id="migrationScaler" parameter="@migrationMatrix" indicator="@indicator.migrationMatrix" scaleFactor="0.9" spec="ScaleOperator" weight="8.0"/> -->
+
+	<logger fileName="fitBD_neutralFitModel_5sites_sim1.log" id="tracelog" logEvery="100" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="prior"/>
+        <!-- <log idref="likelihood"/> -->  
+        <log idref="BDMM"/>
+        <log id="TreeHeight" spec="beast.evolution.tree.TreeHeightLogger" tree="@tree"/>
+		<log idref="origin"/>
+        <parameter idref="birthRate" name="log"/>
+        <!-- <parameter idref="migrationMatrix" name="log"/> -->
+        <parameter idref="deathRate" name="log"/> 
+    </logger>
+
+    <logger id="screenlog" logEvery="10">
+        <log idref="posterior"/>
+        <log arg="@posterior" id="ESS.0" spec="util.ESS"/>
+        <log idref="prior"/>
+        <log idref="TreeHeight"/>
+		<log idref="origin"/>
+        <log idref="birthRate"/>
+        <!-- <log idref="migrationMatrix"/> -->
+        <log idref="deathRate"/>
+    </logger>
+ 		 
+
+</run>
+
+</beast>

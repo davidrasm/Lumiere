@@ -1,0 +1,439 @@
+<beast version='2.0'
+namespace='beast.phylodynamics:beast.phylodynamics.epidemiology:beast.epi.loggers:beast.core:beast.evolution.tree:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihood:beast.evolution.speciation:beast.core.parameter:beast.evolution.migrationmodel:beast.evolution.alignment'>
+
+<map name="Beta">beast.math.distributions.Beta</map>
+<map name="Exponential">beast.math.distributions.Exponential</map>
+<map name="InverseGamma">beast.math.distributions.InverseGamma</map>
+<map name="LogNormal">beast.math.distributions.LogNormalDistributionModel</map>
+<map name="Gamma">beast.math.distributions.Gamma</map>
+<map name="Uniform">beast.math.distributions.Uniform</map>
+<map name="prior">beast.math.distributions.Prior</map>
+<map name="LaplaceDistribution">beast.math.distributions.LaplaceDistribution</map>
+<map name="OneOnX">beast.math.distributions.OneOnX</map>
+<map name="Normal">beast.math.distributions.Normal</map>
+
+    	<data id="alignment" name="alignment" dataType="binary" spec="beast.evolution.alignment.UnsortedAlignment">
+<sequence id="seq_5-359_100" taxon="5-359_100" totalcount="2" value="0101001010"/>
+<sequence id="seq_6-368_100" taxon="6-368_100" totalcount="2" value="0001011011"/>
+<sequence id="seq_4-236_100" taxon="4-236_100" totalcount="2" value="0100000011"/>
+<sequence id="seq_3-358_100" taxon="3-358_100" totalcount="2" value="0001000010"/>
+<sequence id="seq_3-322_100" taxon="3-322_100" totalcount="2" value="1000000010"/>
+<sequence id="seq_4-177_100" taxon="4-177_100" totalcount="2" value="1100000010"/>
+<sequence id="seq_4-414_100" taxon="4-414_100" totalcount="2" value="0100000011"/>
+<sequence id="seq_6-350_100" taxon="6-350_100" totalcount="2" value="1101000011"/>
+<sequence id="seq_3-380_100" taxon="3-380_100" totalcount="2" value="0100000010"/>
+<sequence id="seq_3-286_100" taxon="3-286_100" totalcount="2" value="0100000001"/>
+<sequence id="seq_4-409_100" taxon="4-409_100" totalcount="2" value="0100001001"/>
+<sequence id="seq_5-214_100" taxon="5-214_100" totalcount="2" value="0100110010"/>
+<sequence id="seq_3-427_100" taxon="3-427_100" totalcount="2" value="0000000011"/>
+<sequence id="seq_4-335_100" taxon="4-335_100" totalcount="2" value="0100010010"/>
+<sequence id="seq_6-223_100" taxon="6-223_100" totalcount="2" value="0001011011"/>
+<sequence id="seq_5-342_100" taxon="5-342_100" totalcount="2" value="0101001010"/>
+<sequence id="seq_4-411_100" taxon="4-411_100" totalcount="2" value="0100000011"/>
+<sequence id="seq_5-396_100" taxon="5-396_100" totalcount="2" value="0110000011"/>
+<sequence id="seq_4-364_100" taxon="4-364_100" totalcount="2" value="0100010010"/>
+<sequence id="seq_2-288_100" taxon="2-288_100" totalcount="2" value="0000000010"/>
+<sequence id="seq_4-285_100" taxon="4-285_100" totalcount="2" value="0100000011"/>
+<sequence id="seq_4-179_100" taxon="4-179_100" totalcount="2" value="0101000010"/>
+<sequence id="seq_4-390_100" taxon="4-390_100" totalcount="2" value="0100000110"/>
+<sequence id="seq_3-326_100" taxon="3-326_100" totalcount="2" value="0000100010"/>
+<sequence id="seq_4-303_100" taxon="4-303_100" totalcount="2" value="1000001010"/>
+<sequence id="seq_6-419_100" taxon="6-419_100" totalcount="2" value="1101000011"/>
+<sequence id="seq_5-300_100" taxon="5-300_100" totalcount="2" value="0100110010"/>
+<sequence id="seq_5-293_100" taxon="5-293_100" totalcount="2" value="0100110010"/>
+<sequence id="seq_4-238_100" taxon="4-238_100" totalcount="2" value="0101000010"/>
+<sequence id="seq_4-258_100" taxon="4-258_100" totalcount="2" value="1100000010"/>
+<sequence id="seq_4-410_100" taxon="4-410_100" totalcount="2" value="0101000010"/>
+<sequence id="seq_5-291_100" taxon="5-291_100" totalcount="2" value="0100110010"/>
+<sequence id="seq_5-290_100" taxon="5-290_100" totalcount="2" value="1100000011"/>
+<sequence id="seq_9-428_100" taxon="9-428_100" totalcount="2" value="1111001111"/>
+<sequence id="seq_3-372_100" taxon="3-372_100" totalcount="2" value="0100000010"/>
+<sequence id="seq_5-231_100" taxon="5-231_100" totalcount="2" value="0100100011"/>
+<sequence id="seq_3-370_100" taxon="3-370_100" totalcount="2" value="0001000010"/>
+<sequence id="seq_4-403_100" taxon="4-403_100" totalcount="2" value="1100000010"/>
+<sequence id="seq_6-349_100" taxon="6-349_100" totalcount="2" value="0001011011"/>
+<sequence id="seq_2-208_100" taxon="2-208_100" totalcount="2" value="0000000010"/>
+<sequence id="seq_4-314_100" taxon="4-314_100" totalcount="2" value="0101000010"/>
+<sequence id="seq_3-111_100" taxon="3-111_100" totalcount="2" value="0100000010"/>
+<sequence id="seq_3-434_100" taxon="3-434_100" totalcount="2" value="0000001010"/>
+<sequence id="seq_4-220_100" taxon="4-220_100" totalcount="2" value="0100000011"/>
+<sequence id="seq_5-304_100" taxon="5-304_100" totalcount="2" value="0100110010"/>
+<sequence id="seq_4-337_100" taxon="4-337_100" totalcount="2" value="0100110000"/>
+<sequence id="seq_4-395_98.7689" taxon="4-395_98.7689" totalcount="2" value="0100100010"/>
+<sequence id="seq_4-276_98.3893" taxon="4-276_98.3893" totalcount="2" value="0100000011"/>
+<sequence id="seq_3-343_98.2955" taxon="3-343_98.2955" totalcount="2" value="0000100010"/>
+<sequence id="seq_3-313_98.1467" taxon="3-313_98.1467" totalcount="2" value="0100000010"/>
+<sequence id="seq_4-361_96.1887" taxon="4-361_96.1887" totalcount="2" value="0100100010"/>
+<sequence id="seq_6-347_96.1693" taxon="6-347_96.1693" totalcount="2" value="0001011011"/>
+<sequence id="seq_4-315_95.6846" taxon="4-315_95.6846" totalcount="2" value="0100110000"/>
+<sequence id="seq_5-341_95.3218" taxon="5-341_95.3218" totalcount="2" value="0100110010"/>
+<sequence id="seq_4-299_95.2498" taxon="4-299_95.2498" totalcount="2" value="0101000010"/>
+<sequence id="seq_4-295_95.2156" taxon="4-295_95.2156" totalcount="2" value="1100000010"/>
+<sequence id="seq_2-58_95.0889" taxon="2-58_95.0889" totalcount="2" value="0000000010"/>
+<sequence id="seq_3-191_93.8677" taxon="3-191_93.8677" totalcount="2" value="0000100010"/>
+<sequence id="seq_4-278_93.6971" taxon="4-278_93.6971" totalcount="2" value="0100000011"/>
+<sequence id="seq_2-310_93.4578" taxon="2-310_93.4578" totalcount="2" value="0000000010"/>
+<sequence id="seq_3-289_92.9145" taxon="3-289_92.9145" totalcount="2" value="1000001000"/>
+<sequence id="seq_6-282_92.9084" taxon="6-282_92.9084" totalcount="2" value="0111000011"/>
+<sequence id="seq_4-117_91.9806" taxon="4-117_91.9806" totalcount="2" value="1000001010"/>
+<sequence id="seq_5-296_91.2583" taxon="5-296_91.2583" totalcount="2" value="0101000011"/>
+<sequence id="seq_5-171_91.03" taxon="5-171_91.03" totalcount="2" value="0101100010"/>
+<sequence id="seq_4-283_89.8745" taxon="4-283_89.8745" totalcount="2" value="0000000111"/>
+<sequence id="seq_4-260_89.8041" taxon="4-260_89.8041" totalcount="2" value="0001100010"/>
+<sequence id="seq_7-239_88.4323" taxon="7-239_88.4323" totalcount="2" value="0111010011"/>
+<sequence id="seq_4-110_85.7923" taxon="4-110_85.7923" totalcount="2" value="0100000011"/>
+<sequence id="seq_3-190_85.1201" taxon="3-190_85.1201" totalcount="2" value="0100000010"/>
+<sequence id="seq_3-146_85.0637" taxon="3-146_85.0637" totalcount="2" value="1000000010"/>
+<sequence id="seq_5-199_84.1593" taxon="5-199_84.1593" totalcount="2" value="0110010010"/>
+<sequence id="seq_4-75_83.8885" taxon="4-75_83.8885" totalcount="2" value="0100000011"/>
+<sequence id="seq_3-86_82.5954" taxon="3-86_82.5954" totalcount="2" value="0100000010"/>
+<sequence id="seq_3-62_81.3953" taxon="3-62_81.3953" totalcount="2" value="0100000010"/>
+<sequence id="seq_2-76_80.8325" taxon="2-76_80.8325" totalcount="2" value="0000000010"/>
+<sequence id="seq_6-182_80.334" taxon="6-182_80.334" totalcount="2" value="1001001110"/>
+<sequence id="seq_3-157_79.2422" taxon="3-157_79.2422" totalcount="2" value="0100000010"/>
+<sequence id="seq_2-170_78.7028" taxon="2-170_78.7028" totalcount="2" value="0000000010"/>
+<sequence id="seq_5-113_78.6324" taxon="5-113_78.6324" totalcount="2" value="1000001011"/>
+<sequence id="seq_4-63_77.8936" taxon="4-63_77.8936" totalcount="2" value="1000001010"/>
+<sequence id="seq_6-150_77.3532" taxon="6-150_77.3532" totalcount="2" value="0110000111"/>
+<sequence id="seq_5-71_77.0825" taxon="5-71_77.0825" totalcount="2" value="0101000011"/>
+<sequence id="seq_4-85_76.8586" taxon="4-85_76.8586" totalcount="2" value="0101000010"/>
+<sequence id="seq_3-143_76.7515" taxon="3-143_76.7515" totalcount="2" value="0100000001"/>
+<sequence id="seq_4-64_75.1538" taxon="4-64_75.1538" totalcount="2" value="0100000011"/>
+<sequence id="seq_4-89_74.2261" taxon="4-89_74.2261" totalcount="2" value="1000001010"/>
+<sequence id="seq_5-108_74.2097" taxon="5-108_74.2097" totalcount="2" value="0101000011"/>
+<sequence id="seq_3-79_73.5555" taxon="3-79_73.5555" totalcount="2" value="0100000010"/>
+<sequence id="seq_4-77_67.2283" taxon="4-77_67.2283" totalcount="2" value="1000001010"/>
+<sequence id="seq_3-81_66.6158" taxon="3-81_66.6158" totalcount="2" value="0100000010"/>
+<sequence id="seq_4-68_66.2742" taxon="4-68_66.2742" totalcount="2" value="0100000011"/>
+<sequence id="seq_2-17_65.6407" taxon="2-17_65.6407" totalcount="2" value="0000000010"/>
+<sequence id="seq_3-23_62.9802" taxon="3-23_62.9802" totalcount="2" value="0100000010"/>
+<sequence id="seq_2-27_55.6055" taxon="2-27_55.6055" totalcount="2" value="0100000000"/>
+<sequence id="seq_3-42_54.825" taxon="3-42_54.825" totalcount="2" value="0100000010"/>
+<sequence id="seq_3-18_43.1283" taxon="3-18_43.1283" totalcount="2" value="0100000010"/>
+<sequence id="seq_3-16_37.2435" taxon="3-16_37.2435" totalcount="2" value="0100000010"/>
+<sequence id="seq_3-10_36.1564" taxon="3-10_36.1564" totalcount="2" value="0100000010"/>
+<sequence id="seq_3-14_32.5686" taxon="3-14_32.5686" totalcount="2" value="0100000010"/>
+ 		</data>
+
+		<data data="@alignment" dataType="nucleotide" filter="1::3,2::3" id="alignment.CP1+2" name="taxa" spec="beast.evolution.alignment.FilteredAlignment"/>
+		<data data="@alignment" dataType="nucleotide" filter="3::3" id="alignment.CP3" name="taxa" spec="beast.evolution.alignment.FilteredAlignment"/>
+		
+	<trait id="dateTrait" spec="beast.evolution.tree.TraitSet" traitname="date-forward">
+5-359_100=100,
+6-368_100=100,
+4-236_100=100,
+3-358_100=100,
+3-322_100=100,
+4-177_100=100,
+4-414_100=100,
+6-350_100=100,
+3-380_100=100,
+3-286_100=100,
+4-409_100=100,
+5-214_100=100,
+3-427_100=100,
+4-335_100=100,
+6-223_100=100,
+5-342_100=100,
+4-411_100=100,
+5-396_100=100,
+4-364_100=100,
+2-288_100=100,
+4-285_100=100,
+4-179_100=100,
+4-390_100=100,
+3-326_100=100,
+4-303_100=100,
+6-419_100=100,
+5-300_100=100,
+5-293_100=100,
+4-238_100=100,
+4-258_100=100,
+4-410_100=100,
+5-291_100=100,
+5-290_100=100,
+9-428_100=100,
+3-372_100=100,
+5-231_100=100,
+3-370_100=100,
+4-403_100=100,
+6-349_100=100,
+2-208_100=100,
+4-314_100=100,
+3-111_100=100,
+3-434_100=100,
+4-220_100=100,
+5-304_100=100,
+4-337_100=100,
+4-395_98.7689=98.7689,
+4-276_98.3893=98.3893,
+3-343_98.2955=98.2955,
+3-313_98.1467=98.1467,
+4-361_96.1887=96.1887,
+6-347_96.1693=96.1693,
+4-315_95.6846=95.6846,
+5-341_95.3218=95.3218,
+4-299_95.2498=95.2498,
+4-295_95.2156=95.2156,
+2-58_95.0889=95.0889,
+3-191_93.8677=93.8677,
+4-278_93.6971=93.6971,
+2-310_93.4578=93.4578,
+3-289_92.9145=92.9145,
+6-282_92.9084=92.9084,
+4-117_91.9806=91.9806,
+5-296_91.2583=91.2583,
+5-171_91.03=91.03,
+4-283_89.8745=89.8745,
+4-260_89.8041=89.8041,
+7-239_88.4323=88.4323,
+4-110_85.7923=85.7923,
+3-190_85.1201=85.1201,
+3-146_85.0637=85.0637,
+5-199_84.1593=84.1593,
+4-75_83.8885=83.8885,
+3-86_82.5954=82.5954,
+3-62_81.3953=81.3953,
+2-76_80.8325=80.8325,
+6-182_80.334=80.334,
+3-157_79.2422=79.2422,
+2-170_78.7028=78.7028,
+5-113_78.6324=78.6324,
+4-63_77.8936=77.8936,
+6-150_77.3532=77.3532,
+5-71_77.0825=77.0825,
+4-85_76.8586=76.8586,
+3-143_76.7515=76.7515,
+4-64_75.1538=75.1538,
+4-89_74.2261=74.2261,
+5-108_74.2097=74.2097,
+3-79_73.5555=73.5555,
+4-77_67.2283=67.2283,
+3-81_66.6158=66.6158,
+4-68_66.2742=66.2742,
+2-17_65.6407=65.6407,
+3-23_62.9802=62.9802,
+2-27_55.6055=55.6055,
+3-42_54.825=54.825,
+3-18_43.1283=43.1283,
+3-16_37.2435=37.2435,
+3-10_36.1564=36.1564,
+3-14_32.5686=32.5686,
+	   <taxa id="TaxonSet" spec="TaxonSet">
+		   <alignment idref="alignment"/>
+	   </taxa>
+	</trait>
+
+	<trait id="typeTrait" spec="beast.evolution.tree.TraitSet" traitname="type">
+5-359_100=5,
+6-368_100=6,
+4-236_100=4,
+3-358_100=3,
+3-322_100=3,
+4-177_100=4,
+4-414_100=4,
+6-350_100=6,
+3-380_100=3,
+3-286_100=3,
+4-409_100=4,
+5-214_100=5,
+3-427_100=3,
+4-335_100=4,
+6-223_100=6,
+5-342_100=5,
+4-411_100=4,
+5-396_100=5,
+4-364_100=4,
+2-288_100=2,
+4-285_100=4,
+4-179_100=4,
+4-390_100=4,
+3-326_100=3,
+4-303_100=4,
+6-419_100=6,
+5-300_100=5,
+5-293_100=5,
+4-238_100=4,
+4-258_100=4,
+4-410_100=4,
+5-291_100=5,
+5-290_100=5,
+9-428_100=9,
+3-372_100=3,
+5-231_100=5,
+3-370_100=3,
+4-403_100=4,
+6-349_100=6,
+2-208_100=2,
+4-314_100=4,
+3-111_100=3,
+3-434_100=3,
+4-220_100=4,
+5-304_100=5,
+4-337_100=4,
+4-395_98.7689=4,
+4-276_98.3893=4,
+3-343_98.2955=3,
+3-313_98.1467=3,
+4-361_96.1887=4,
+6-347_96.1693=6,
+4-315_95.6846=4,
+5-341_95.3218=5,
+4-299_95.2498=4,
+4-295_95.2156=4,
+2-58_95.0889=2,
+3-191_93.8677=3,
+4-278_93.6971=4,
+2-310_93.4578=2,
+3-289_92.9145=3,
+6-282_92.9084=6,
+4-117_91.9806=4,
+5-296_91.2583=5,
+5-171_91.03=5,
+4-283_89.8745=4,
+4-260_89.8041=4,
+7-239_88.4323=7,
+4-110_85.7923=4,
+3-190_85.1201=3,
+3-146_85.0637=3,
+5-199_84.1593=5,
+4-75_83.8885=4,
+3-86_82.5954=3,
+3-62_81.3953=3,
+2-76_80.8325=2,
+6-182_80.334=6,
+3-157_79.2422=3,
+2-170_78.7028=2,
+5-113_78.6324=5,
+4-63_77.8936=4,
+6-150_77.3532=6,
+5-71_77.0825=5,
+4-85_76.8586=4,
+3-143_76.7515=3,
+4-64_75.1538=4,
+4-89_74.2261=4,
+5-108_74.2097=5,
+3-79_73.5555=3,
+4-77_67.2283=4,
+3-81_66.6158=3,
+4-68_66.2742=4,
+2-17_65.6407=2,
+3-23_62.9802=3,
+2-27_55.6055=2,
+3-42_54.825=3,
+3-18_43.1283=3,
+3-16_37.2435=3,
+3-10_36.1564=3,
+3-14_32.5686=3,
+	   <taxa idref="TaxonSet"/>
+	</trait>
+
+        
+<run chainLength="100000" id="mcmc" spec="MCMC" storeEvery="100" numInitializationAttempts="1">
+
+    <!-- From an input tree -->
+    <init spec='beast.util.TreeParser' id="tree" IsLabelledNewick="true" adjustTipHeights="false" trait="dateTrait">
+       <input name='newick'>
+(((3-16_37.2435:6.1966,(((2-288_100:28.3892,2-76_80.8325:9.2217):19.4808,((((4-89_74.2261:7.1072,4-77_67.2283:0.10937):0.88087,5-113_78.6324:12.3943):2.1898,(((3-322_100:20.9548,(3-289_92.9145:12.0207,4-117_91.9806:11.0869):1.8486):7.4502,6-182_80.334:8.7391):4.2656,(4-303_100:29.3818,4-63_77.8936:7.2754):3.2889):3.281):3.3968,((2-170_78.7028:0.67861,(3-326_100:6.5497,3-191_93.8677:0.41742):15.4261):6.7169,(2-310_93.4578:1.943,3-434_100:8.4852):20.2075):10.6558):8.5214):12.8838,(((6-347_96.1693:1.1753,((6-368_100:3.5909,6-349_100:3.5909):1.2911,6-223_100:4.8821):0.12389):28.4667,((2-208_100:16.8953,(3-343_98.2955:13.5301,4-403_100:15.2346):1.6606):2.3197,2-58_95.0889:14.3038):14.2577):10.705,2-17_65.6407:9.8184):16.5761):8.1994):1.5186,((((((((((4-314_100:8.1942,(5-359_100:4.0219,5-342_100:4.0219):4.1722):7.7073,(4-299_95.2498:6.0354,4-238_100:10.7856):5.1158):9.8191,(6-282_92.9084:7.5245,(5-296_91.2583:0.58076,(6-419_100:0.50288,6-350_100:0.50288):8.8196):5.2936):11.1045):0.89429,(((3-358_100:13.6653,4-260_89.8041:3.4694):2.3857,4-179_100:16.0511):4.9067,3-370_100:20.9577):5.6571):1.1644,4-85_76.8586:4.6378):8.6103,(9-428_100:31.0946,(5-108_74.2097:3.5739,5-71_77.0825:6.4468):1.7303):5.2949):5.8971,((((5-341_95.3218:0.82575,5-300_100:5.5039):3.5564,4-364_100:9.0603):3.9596,5-214_100:13.0199):2.9177,((5-291_100:12.0277,(4-337_100:9.1774,4-315_95.6846:4.862):2.8503):3.4205,(5-304_100:13.6534,5-293_100:13.6534):1.7948):0.48942):26.349):7.5626,3-23_62.9802:12.8295):11.4881,3-18_43.1283:4.4657):4.2671,3-10_36.1564:1.7608):4.8673):12.6152,(3-14_32.5686:2.3767,((5-171_91.03:55.0489,5-199_84.1593:48.1783):1.2528,((((((7-239_88.4323:11.3,4-75_83.8885:6.7563):11.2848,((((4-411_100:25.9387,3-427_100:25.9387):1.4498,(5-396_100:6.3391,4-236_100:6.3391):21.0494):0.83446,(4-285_100:19.5521,5-290_100:19.5521):8.6709):1.0793,3-143_76.7515:6.0538):4.8503):10.3347,4-64_75.1538:19.6411):2.3385,(4-68_66.2742:2.1564,(((4-409_100:18.4313,((4-276_98.3893:9.2485,3-286_100:10.8593):3.1329,4-414_100:13.9922):4.4391):6.3494,(4-220_100:15.4245,(4-278_93.6971:7.3827,4-283_89.8745:3.5601):1.739):9.3561):8.5107,6-150_77.3532:10.6446):2.5908):10.9436):13.3725,(((3-42_54.825:0.11678,(((4-295_95.2156:13.578,4-177_100:18.3624):3.8125,3-146_85.0637:7.2386):11.2473,(4-361_96.1887:28.0918,(3-190_85.1201:6.6211,3-380_100:21.501):10.4021):1.5191):11.8697):3.2137,(((4-390_100:26.6248,3-111_100:26.6248):2.5697,3-62_81.3953:10.5898):8.2644,3-86_82.5954:20.0544):11.0466):3.7094,(((3-81_66.6158:0.12804,3-79_73.5555:7.0678):0.056951,(((3-313_98.1467:6.3601,(3-372_100:3.2325,4-395_98.7689:2.0013):4.9809):13.302,3-157_79.2422:0.75749):2.3582,(4-258_100:20.8018,(4-335_100:8.5991,4-410_100:8.5991):12.2026):3.0718):9.6957):7.5651,(5-231_100:19.7894,4-110_85.7923:5.5817):21.3449):11.0806):7.9833):3.2462,2-27_55.6055:19.0499):1.8273):4.5364):13.2789);
+       </input>
+    </init>
+		
+    <state id="state" storeEvery="10000">
+        
+        <stateNode idref="tree"/>             
+        <!-- <stateNode idref="birthRateAmongDemes"/> -->
+        <stateNode idref="samplingProportion"/>
+        <stateNode idref="deathRate"/>
+        <stateNode idref="birthRate"/>
+        <stateNode idref="migrationMatrix"/>
+        <stateNode idref="geo-frequencies"/>
+        <stateNode idref="origin"/>
+        <stateNode idref="mutFitEffects"/>
+
+        <stateNode spec="beast.core.parameter.BooleanParameter" dimension="2" id="indicator.migrationMatrix" value="true true"/>
+        <stateNode spec="beast.core.parameter.BooleanParameter" dimension="1" id="indicator.birthRate" value="true"/>
+        <stateNode spec="beast.core.parameter.BooleanParameter" dimension="1" id="indicator.deathRate" value="true"/>
+
+    </state>
+
+    <distribution id="posterior" spec="util.CompoundDistribution">
+        <distribution id="prior" spec="util.CompoundDistribution">
+			 <distribution spec="beast.evolution.speciation.FitnessBirthDeathModel" id="BDMM" tree='@tree' typeLabel="type"
+			 stateNumber="1" checkRho='false' dtTimeStep='0.05' alignment='@alignment' approxEProbs='true'>
+      			
+      			<parameter id="origin" name="origin" value="100."/>  <!-- 1975 -->
+				<parameter name="frequencies" id="geo-frequencies" value="0.5 0.5" lower="0." upper="1."/>	
+
+				<!-- Retain migration rates in case of more than one pop state?? -->
+				<parameter name="migrationMatrix" id="migrationMatrix" lower="0" dimension="2" value="" upper="10"/>
+				
+				<parameter name="birthRate" id="birthRate" lower="0" dimension="1" value="" upper="10"/>
+
+				<parameter name="rho" id="rhoSamplingProportion" value="" lower="0" dimension="1"/>
+                <parameter name="rhoSamplingTimes" id="rhoSamplingTimes" value="0."/> <!-- Only at present (t=0) -->
+				
+				<parameter name="deathRate" id="deathRate" value="0.05" lower="0" dimension="1"/> <!-- No removal on ART -->
+				<parameter name="samplingProportion" id="samplingProportion" value="" lower="0" upper="1."/>
+				
+				<reverseTimeArrays spec="BooleanParameter" value="true true true true true true"/>
+				
+				<fitnessModel spec="beast.evolution.fitnessmodel.SiteSpecificFitnessModel" id="fitModel" mutationMatrix="@migrationMatrix">
+				    
+					<parameter name="mutFitEffects" id="mutFitEffects" value="1.0" lower="0" upper="1.5" dimension="2"/>
+	                
+	            </fitnessModel>				  
+			 </distribution>
+			
+            
+			<distribution id="birthRatePrior" spec='beast.math.distributions.ExcludablePrior' x="@birthRate" xInclude="true">
+            	<LogNormal name="distr" M="0.1" S="1.0" meanInRealSpace="true"/> 
+			</distribution>
+
+			<distribution id="deathRatePrior" spec='beast.math.distributions.ExcludablePrior' x="@deathRate" xInclude="true">
+            	<LogNormal name="distr" M="0.05" S="0.1" meanInRealSpace="true"/>
+			</distribution>
+
+			<distribution id="migrationPrior" spec='beast.math.distributions.ExcludablePrior' x="@migrationMatrix" xInclude="true true">
+            	<LogNormal name="distr" M="0.002" S="1.0" meanInRealSpace="true"/> 
+			</distribution>
+            
+              
+        </distribution>
+    </distribution>
+
+	<operator id="mutFitEffectsScaler" parameter="@mutFitEffects" scaleFactor="0.9" spec="ScaleOperator" weight="6"/>
+	<operator id="birthRateScaler" parameter="@birthRate" indicator="@indicator.birthRate" scaleFactor="0.9" spec="ScaleOperator" weight="6"/>
+   	<operator id='birthFitUpDown' spec='UpDownOperator' scaleFactor="0.9" weight="6" optimise="true">
+         <up idref="mutFitEffects"/>
+         <down idref="birthRate"/>
+  	</operator>
+
+<logger fileName="" id="tracelog" logEvery="100" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <log idref="posterior"/>
+        <log idref="prior"/>
+        <!-- <log idref="likelihood"/> -->  
+        <log idref="BDMM"/>
+        <log id="TreeHeight" spec="beast.evolution.tree.TreeHeightLogger" tree="@tree"/>
+		<log idref="origin"/>
+		<parameter idref="mutFitEffects" name="log"/>
+        <parameter idref="birthRate" name="log"/>
+        <!-- <parameter idref="migrationMatrix" name="log"/> -->
+        <parameter idref="deathRate" name="log"/> 
+    </logger>
+
+    <logger id="screenlog" logEvery="10">
+        <log idref="posterior"/>
+        <log arg="@posterior" id="ESS.0" spec="util.ESS"/>
+        <log idref="prior"/>
+        <log idref="TreeHeight"/>
+		<log idref="origin"/>
+		<log idref="mutFitEffects"/>
+        <log idref="birthRate"/>
+        <!-- <log idref="migrationMatrix"/> -->
+        <log idref="deathRate"/>
+    </logger>
+ 		 
+
+</run>
+
+</beast>
