@@ -4936,7 +4936,7 @@ EBOV|PL9199|KU296371|SLE|PortLoko|2015-07-13=0,
   	</operator>
 	
 
-<logger fileName="ebola_makona_multFitnessBD_9genos_geo_exactP0s_geoRel.log" id="tracelog" logEvery="100" model="@posterior" sanitiseHeaders="true" sort="smart">
+<logger fileName="ebola_makona_multFitnessBD_9genos_exactP0s_geoEffects.log" id="tracelog" logEvery="100" model="@posterior" sanitiseHeaders="true" sort="smart">
         <log idref="posterior"/>
         <log idref="prior"/>
         <!-- <log idref="likelihood"/> -->  
