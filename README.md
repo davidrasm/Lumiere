@@ -75,5 +75,5 @@ Running MCMC algorithms on personal computers can be cumbersome. Here we have in
 
 ## Authors
 
-* **David Rasmussen** with **Marco Hamins-Puertolas 
+* **David Rasmussen** with **Marco Hamins-Puertolas** 
 
