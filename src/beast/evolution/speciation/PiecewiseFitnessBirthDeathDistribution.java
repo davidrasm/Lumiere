@@ -511,7 +511,8 @@ public abstract class PiecewiseFitnessBirthDeathDistribution extends SpeciesTree
 			
 			// Get p0 conditions for this time point
 			int p0Index = Utils.index(to,integrationTimes, integrationTimes.length);
-			double[] p0 = pConditions[p0Index];
+			// fixed integration p0 prob, previously was: double[] p0 = pConditions[p0Index]
+			double[] p0 = pConditions[integrationTimes.length - p0Index - 1]; 
 		
 			// Check dt updates
 			//System.out.println("dt = " + dt);
@@ -634,9 +635,10 @@ public abstract class PiecewiseFitnessBirthDeathDistribution extends SpeciesTree
 						// Loop over all other states j
 						for (int j=0; j<seqStates[site]; j++){
 			
+							l = (i*(maxState-1)+(j<i?j:j-1))*totalIntervals + index;
 							//l = (i*(n-1)+(j<i?j:j-1))*totalIntervals + index;
 							//l = i*(seqStates[site]-1)+(j<i?j:j-1); // linear indexing 
-							l = i*(maxState-1)+(j<i?j:j-1); // made this max state so it works regardless of seqStates[site]
+							//l = i*(maxState-1)+(j<i?j:j-1); // made this max state so it works regardless of seqStates[site]
 							
 							if (i!=j){
 							
