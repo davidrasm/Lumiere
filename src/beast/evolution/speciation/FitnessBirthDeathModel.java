@@ -121,12 +121,13 @@ public class FitnessBirthDeathModel extends PiecewiseFitnessBirthDeathDistributi
 			tipTime = T-tip.getHeight();
 			isRhoTip[tip.getNr()] = false;
 
-			for (Double time:rhoSamplingChangeTimes){
+			// Taken out as Lumiere information is in alignment
+			// for (Double time:rhoSamplingChangeTimes){
 
-				// TO DO: make a warning that rho sampling precision is with 1e-10. Maybe do a threshold to the type of dating associated with the data?
-				if (Math.abs(time-tipTime) <  globalPrecisionThreshold && rho[getNodeState(tip,false)*totalIntervals + Utils.index(time, times, totalIntervals)]>0) isRhoTip[tip.getNr()] = true;
+			// 	// TO DO: make a warning that rho sampling precision is with 1e-10. Maybe do a threshold to the type of dating associated with the data?
+			// 	if (Math.abs(time-tipTime) <  globalPrecisionThreshold && rho[getNodeState(tip,false)*totalIntervals + Utils.index(time, times, totalIntervals)]>0) isRhoTip[tip.getNr()] = true;
 
-			}
+			// }
 		}
 	}
 

@@ -47,7 +47,7 @@ import beast.core.parameter.Map;
 import beast.core.util.Log;
 import beast.evolution.datatype.DataType;
 import beast.evolution.datatype.StandardData;
-import beast.util.AddOnManager;
+import beast.util.PackageManager;
 
 @Description("Class representing alignment data" +
 			"Same as Alignment in beast.evolution.alignment but does not sort sites by site patterns")
@@ -79,7 +79,7 @@ public class UnsortedAlignment extends Alignment {
 
     static public void findDataTypes() {
         // build up list of data types
-        List<String> m_sDataTypes = AddOnManager.find(beast.evolution.datatype.DataType.class, IMPLEMENTATION_DIR);
+        List<String> m_sDataTypes = PackageManager.find(beast.evolution.datatype.DataType.class, IMPLEMENTATION_DIR);
         for (String dataTypeName : m_sDataTypes) {
             try {
                 DataType dataType = (DataType) Class.forName(dataTypeName).newInstance();
@@ -255,7 +255,7 @@ public class UnsortedAlignment extends Alignment {
                         "Choose one of " + Arrays.toString(types.toArray(new String[0])));
             }
             // seems to spend forever in there??
-            List<String> dataTypes = AddOnManager.find(beast.evolution.datatype.DataType.class, IMPLEMENTATION_DIR);
+            List<String> dataTypes = PackageManager.find(beast.evolution.datatype.DataType.class, IMPLEMENTATION_DIR);
             for (String dataTypeName : dataTypes) {
                 DataType dataType;
 				try {
@@ -339,7 +339,7 @@ public class UnsortedAlignment extends Alignment {
     /**
      * Checks that sequences are all the same length, calculates patterns and sets up ascertainment.
      */
-    private void sanityCheckCalcPatternsSetUpAscertainment(boolean log) {
+    protected void sanityCheckCalcPatternsSetUpAscertainment(boolean log) {
         // Sanity check: make sure sequences are of same length
         int length = counts.get(0).size();
         if (!(m_dataType instanceof StandardData)) {
