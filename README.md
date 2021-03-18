@@ -18,7 +18,9 @@ Lumiere requires:
 
 Users should check the relevant version.xml files for each package to ensure dependecies are fulfilled.
 
-## Installation guide
+## Installation guide for Eclipse
+
+To compile BEAST with the Lumiere source code, we recommend using the Eclipse IDE.
 
 Create folder in any accessible directory, this will serve as your eclipse workspace. For our purposes we will assume this directory is 
 ```
@@ -73,5 +75,5 @@ Running MCMC algorithms on personal computers can be cumbersome. Here we have in
 
 ## Authors
 
-* **David Rasmussen** 
+* **David Rasmussen** with **Marco Hamins-Puertolas** 
 
