@@ -10,7 +10,6 @@ Lumiere requires:
 * BEAST2 - available for download at the [BEAST2 site](https://www.beast2.org/). Required to be between versions v2.4.0 and v2.5.2, older versions can be found on the [GitHub page](https://github.com/CompEvol/beast2/releases).
 * MASTER - available for download on the [GitHub page](https://github.com/tgvaughan/MASTER).
 * MultiTypeTree - available for download on the [GitHub page](https://github.com/tgvaughan/MultiTypeTree).
-* beast-classic - available for download on the [GitHub page](https://github.com/BEAST2-Dev/beast-classic).
 * BEASTLabs - available for download on the [GitHub page](https://github.com/BEAST2-Dev/BEASTLabs).
 * sampled-ancestors - download can be found on the [GitHub page](https://github.com/CompEvol/sampled-ancestors).
 * Eclipse - software for package development and running, download can be found on [Eclipse website](https://www.eclipse.org/downloads/).
@@ -38,13 +37,12 @@ Subsequently, for each package in the table below we need to do the following:
 
 | Package              | Project Build Path / References| Libraries
 | -------------        | -------------                  | -------------
-| (1) beast-classic    | (2)-(7)                        | (1).mtj
-| (2) beast2           | (1)                            | all jar files found in (2)/lib
-| (3) BEAST LABS       | (2)                            | (3).junit
-| (4) Lumiere          | (1)-(3),(5)-(7)                | (4).commons-lang3, (2).commons-math3, (1).mtj, (6).jblas
-| (5) MASTER           | (2)                            | all jar files found in (5)/lib
-| (6) MultiTypeTree    |                                | all jar files found in (6)/lib
-| (7) SampledAncestors | (2)                            |
+| (1) beast2           |                             	| all jar files found in (1)/lib
+| (2) BEAST LABS       | (1)                            | (2).junit
+| (3) Lumiere          | (1)-(2),(4)-(6)                | (3).commons-lang3, (1).commons-math3, (5).jblas
+| (4) MASTER           | (1)                            | all jar files found in (4)/lib
+| (5) MultiTypeTree    |                                | all jar files found in (5)/lib
+| (6) SampledAncestors | (1)                            |
 
 ## Test Example
 
@@ -53,7 +51,11 @@ Test that you have set up Lumiere correctly by running any of the xml files foun
 Lumiere/examples
 ```
 
-This can be done by navigating to Run > Run Configurations > Java Application and selecting the New Launch Configuration button at the top right of the pop-up window. Subsequently ensure that under the Main tab the Project references the Lumiere folder and that the Main class is beast.app.BeastMCMC. Under the Arguments tab, reference the selected xml (eg. examples/ebola_makona_multFitnessBD_9genos_exactP0s.xml). Finally, navigate to the Classpath tab and add all of the projects to the Bootstrap Entries and all of the jar files should automatically become listed under User Entries.
+This can be done by navigating to Run > Run Configurations > Java Application and selecting the New Launch Configuration button at the top right of the pop-up window. Subsequently ensure the following:
+* Under the Main tab the Project is listed to be the Lumiere folder
+* The Main class is beast.app.BeastMCMC 
+* Under the Arguments tab, reference the selected xml (eg. examples/ebola_makona_multFitnessBD_9genos_exactP0s.xml)
+* Navigate to the tab labeled either Classpath or Dependecies. If labeled Classpath add all of the projects to the Bootstrap Entries and all of the jar files should automatically become listed under User Entries. If labeled Dependencies add all of the projects to Classpath Entries and ensure all jar files found in the lib folders are listed.
 
 ## Running simulation tests
 
